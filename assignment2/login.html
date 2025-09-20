@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form login and password</title>
     <link rel="stylesheet" href="styles.css">
-    <title>Tours</title>
 </head>
-<body>
+<body class="purple-background">
     <div class="navbar">
         <div class="navdiv">
             <ul class="navul">
@@ -21,45 +21,31 @@
             </ul>
         </div>
     </div>
-    <div class="tours_container">
-        <h1>OUR TOURS</h1>
-        <div class="tours_container_packages">
-            <div class="classic_tour">
-                <img src="resources/chocolate river.jpg" alt="Chocolate river">
-                <h2>Classic Tour</h2>
-                <ul>
-                    <li>Guided tour of main factory highlights</li>
-                    <li>Visit Chocolate River & Nut Room</li>
-                    <li>Free Wonka chocolate bar</li>
-                    <li>Group photo</li>
-                    <li>Duration:3-4 hours</li>
-                </ul>
+    <div class="image-form">
+        <img src="resources/chocolate.jpeg" alt="Login image">
+        <div class="login_form">
+        <form> 
+            <h1>Login </h1>
+            <div class="input-box">
+                <input type="text" placeholder="Username" required>
             </div>
-            <div class="deluxe_tour">
-                <img src="resources/cafe.jpg" alt="Our cafe">
-                <h2>Deluxe Tour</h2>
-                <ul>
-                    <li>All Classic Tour features</li>
-                    <li>Candy-making workshop</li>
-                    <li>Taste exclusive Wonka treats</li>
-                    <li>Small group, behind-the-scenes access</li>
-                    <li>Duration:5-6 hours</li>
-                </ul>
+            <div class="input-box">
+                <input type="password" placeholder="Password" required>
             </div>
-            <div class="vip_tour">
-                <img src="resources/oompas.png" alt="Oompa Loompas">
-                <h2>VIP Tour</h2>
-                <ul>
-                    <li>All Deluxe Tour features</li>
-                    <li>Private tour guide</li>
-                    <li>Meet & greet with Oompa Loompas</li>
-                    <li>Exclusive souvenir gift box and wrapped-up secret presents</li>
-                    <li>Duration:Full day experience</li>
-                </ul>
+            <div id="remember-forgot">
+                <label><input type="checkbox">Remember me</label>
+                <a href="#">Forgot Password?</a>
             </div>
-        </div>
+            <button type="submit" class="btn_login">Login</button>
+            <div id="register-link">
+                <p>Don't have an account? <a href="#">Register</a></p>
+            </div>
+        </form>
     </div>
-    <footer>
+
+    </div>
+    
+<footer>
         <div class="footer-content">
             <div id="people-list">
                 <h3>Website Makers</h3>
@@ -83,5 +69,7 @@
             </div> 
         </div>
     </footer>
+
+    
 </body>
 </html>
