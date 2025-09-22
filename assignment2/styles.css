@@ -285,3 +285,117 @@ footer {
 #newsletter button:hover {
   background-color: black;
 }
+
+body.stuff-page {
+  background-image: url("./resources/oompa-loompas-for-stuff.png");
+  background-size: cover;       
+  background-repeat: no-repeat; 
+  background-attachment: fixed;
+  background-position: center;  
+}
+
+.story-hero {
+  display: none;
+}
+
+/* ===== STUFF PAGE – readable over background ===== */
+body.stuff-page {
+  /* фон у тебя уже подключён — оставляем */
+  color: #f2f2f4;                 /* базовый цвет текста светлый */
+}
+
+/* лёгкое затемнение фона по всей странице */
+body.stuff-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0.20), rgba(0,0,0,0.55));
+  pointer-events: none;
+  z-index: -1; /* остаётся позади всего контента */
+}
+
+/* сам контент — в полупрозрачной «карте» для супер-читабельности */
+body.stuff-page main.container {
+  max-width: 1100px;
+  margin: 28px auto 64px;
+  padding: 28px 28px 8px;
+  background: rgba(0, 0, 0, 0.35);      /* тёмная вуаль под текстом */
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  backdrop-filter: blur(2px);           /* лёгкий блюр заднего фона */
+}
+
+/* заголовок страницы */
+body.stuff-page .page-title {
+  color: #ffffff;
+  letter-spacing: .5px;
+  text-align: center;
+  margin: 4px 0 18px;
+  text-shadow: 0 2px 6px rgba(0,0,0,.45);
+}
+
+/* карточки/блоки истории */
+body.stuff-page .story-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+body.stuff-page .story-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 14px;
+  padding: 18px 18px 12px;
+}
+
+body.stuff-page h2 {
+  color: #ffffff;
+  margin: 0 0 8px;
+  text-shadow: 0 1px 3px rgba(0,0,0,.45);
+}
+
+body.stuff-page p,
+body.stuff-page li {
+  color: #eef1f6;
+  line-height: 1.65;
+  text-shadow: 0 1px 2px rgba(0,0,0,.35);
+}
+
+/* списки аккуратнее */
+body.stuff-page .bullets {
+  margin: 8px 0 0 18px;
+  padding: 0;
+}
+
+/* цитата, если используешь */
+body.stuff-page .quote-block blockquote {
+  color: #ffffff;
+  font-style: italic;
+  border-left: 4px solid rgba(255,255,255,0.35);
+  padding-left: 12px;
+  margin: 8px 0 0;
+  text-shadow: 0 2px 6px rgba(0,0,0,.45);
+}
+
+/* немного воздуха от фиолетовой навигации */
+body.stuff-page .navbar { box-shadow: 0 2px 6px rgba(0,0,0,.25); }
+
+/* адаптив: на широких экранах кладём блоки в 2 колонки */
+@media (min-width: 900px) {
+  body.stuff-page .story-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ===== FOOTER TEXT FIX ===== */
+footer {
+  color: #000; /* основной цвет текста в футере */
+}
+
+footer h3 {
+  color: #000; /* заголовки тоже чёрные */
+}
+
+footer ul li,
+footer p {
+  color: #000 !important; /* имена и адрес — чёрные */
+}
