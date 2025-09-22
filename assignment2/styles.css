@@ -286,6 +286,49 @@ footer {
   background-color: black;
 }
 
+body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    .whitespace{
+      height: 50px;
+      width: 100%;
+    }
+
+    .top-half {
+      margin:0;
+      background-color: rgb(146, 205, 225);
+      display: flex;
+      border-radius:25%;
+    }
+
+    .left-image, .right-text {
+      flex: 1; /* split 50/50 */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    .left-image {
+      background: url("your-image.jpg") no-repeat center center/cover;
+    }
+
+    .right-text {
+      display:block;
+      padding: 20px;
+      font-size: 2 rem;
+    }
+    .right-text h3{
+      font-size:25px;
+      font-weight: bold;
+    }
+     .whitespace2{
+      height: 100px;
+      width: 100%;
+    }
+  
 body.stuff-page {
   background-image: url("./resources/oompa-loompas-for-stuff.png");
   background-size: cover;       
