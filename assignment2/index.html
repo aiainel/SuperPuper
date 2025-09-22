@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Background Example</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Make the video cover the entire screen */
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* keeps video filling screen */
+      z-index: -1; /* send it behind the text */
+    }
+
+    /* Centered text on top of video */
+    .content {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* makes text readable */
+    }
+  </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="navdiv">
+            <ul class="navul">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="tours.html">Stuff</a></li>
+                <li><a href="contact.html">Gambling</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="ourLuckys.html">Our luckys</a></li>
+                <li><a href="tours.html">Tours</a></li>
+                <li><a href="login.html">login</a></li>
+            </ul>
+        </div>
+    </div>
+
+  <!-- Video background -->
+ <video autoplay muted loop playsinline class="video-bg">
+  <source src="wonka.mp4" type="video/mp4">
+</video>
+
+
+
+  <!-- Text on top -->
+  <div class="content">
+    Welcome to  Willie Wonka world!
+  </div>
+
+  <footer>
+        <div class="footer-content">
+            <div id="people-list">
+                <h3>Website Makers</h3>
+                <ul>
+                    <li>Mansur Zalel</li>
+                    <li>Anel Kashym</li>
+                    <li>Ali Kenzhegaliyev</li>
+                    <li>Moldir Kabdykarim</li>
+                </ul>
+            </div>
+            <div id="newsletter">
+                <h3>Newsletter</h3>
+                <form>
+                     <input type="email" placeholder="Enter your email" required>
+                     <button type="submit">Subscribe</button>
+                </form>
+            </div>
+            <div id="address">
+                <h3>Our Address</h3>
+                <p>Emmy‑Noether‑Straße, Munich, Germany</p>
+            </div> 
+        </div>
+    </footer>
+</body>
+</html>
