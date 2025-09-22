@@ -477,3 +477,39 @@ footer p {
 @media (min-width: 640px) { .product-grid { grid-template-columns: repeat(2,1fr);} }
 @media (min-width: 980px) { .product-grid { grid-template-columns: repeat(3,1fr);} }
 @media (min-width: 1280px){ .product-grid { grid-template-columns: repeat(4,1fr);} }
+
+.lucky_card{
+  border: 5px solid #9370DB;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #9370DB;
+  margin-top: 40px;
+}
+#augustus{
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+#veruca{
+  width:100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+#violet{
+  width:70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+#mike{
+  width:100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+#charlie{
+  width:70%;
+  margin-left: auto;
+  margin-right: auto;
+}
