@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop — Sweets</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+  <!-- ===== NAVBAR (оставляем как на других страницах) ===== -->
+  <nav class="navbar">
+    <div class="navdiv">
+      <ul class="navul">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html">About us</a></li>
+        <li><a href="./stuff.html">Stuff</a></li>
+        <li><a href="./gambling.html">Gambling</a></li>
+        <li><a href="./shop.html" class="active">Shop</a></li>
+        <li><a href="./luckys.html">Our luckys</a></li>
+        <li><a href="./tours.html">Tours</a></li>
+        <li><a href="./login.html">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== MAIN ===== -->
+  <main class="shop-wrap">
+    <h1 class="shop-title">Sweets</h1>
+
+    <section class="product-grid">
+      <!-- Карточка товара -->
+      <article class="pcard">
+        <img class="pimg" src="./resources/rahatchococubedef.jpg" alt="Rahat Cube 275g">
+        <h3 class="pname">Rahat Cube 275g</h3>
+        <div class="pprice">3 600 ₸ / pcs</div>
+      </article>
+
+      <article class="pcard">
+        <img class="pimg" src="./resources/65rahatchococube.jpg" alt="Rahat 65% Cocoa Cube 275g">
+        <h3 class="pname">Rahat 65% Cocoa Cube 275g</h3>
+        <div class="pprice">2 687 ₸ / pcs</div>
+      </article>
+
+      <article class="pcard">
+        <img class="pimg" src="./resources/70rahatchococube.jpg" alt="Rahat 70% Cocoa Cube 275g">
+        <h3 class="pname">Rahat 70% Cocoa Cube 275g</h3>
+        <div class="pprice">4 232 ₸ / pcs</div>
+      </article>
+
+      <article class="pcard">
+        <img class="pimg" src="./resources/gorkirahatcube.jpg" alt="Rahat 80% Cocoa Cube 275g">
+        <h3 class="pname">Rahat 80% Cocoa Cube 275g</h3>
+        <div class="pprice">2 687 ₸ / pcs</div>
+      </article>
+
+      <article class="pcard">
+        <img class="pimg" src="./resources/kazakhstanchocolate.jpg" alt="Rahat Bar 100g">
+        <h3 class="pname">Rahat Bar 100g</h3>
+        <div class="pprice">1 000 ₸ / pcs</div>
+      </article>
+
+      <article class="pcard">
+        <img class="pimg" src="./resources/65rahatchocoplitka.jpg" alt="Rahat 65% Bar 100g">
+        <h3 class="pname">Rahat 65% Bar 100g</h3>
+        <div class="pprice">1 298 ₸ / pcs</div>
+      </article>
+
+      <article class="pcard">
+        <img class="pimg" src="./resources/70rahatchocoplitka.jpg" alt="Rahat 70% Bar 100g">
+        <h3 class="pname">Rahat 70% Bar 100g</h3>
+        <div class="pprice">1 298 ₸ / pcs</div>
+      </article>
+
+      <article class="pcard">
+        <img class="pimg" src="./resources/80plitkarahat.jpg" alt="Rahat 80% Bar 100g">
+        <h3 class="pname">Rahat 80% Bar 100g</h3>
+        <div class="pprice">1 716 ₸ / pcs</div>
+      </article>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER (без изменений) ===== -->
+  <footer>
+    <div class="footer-content">
+      <div id="people-list">
+        <h3>Website Makers</h3>
+        <ul>
+          <li>Mansur Zalel</li>
+          <li>Anel Kashym</li>
+          <li>Ali Kenzhegaliyev</li>
+          <li>Moldir Kabdykarim</li>
+        </ul>
+      </div>
+
+      <div id="newsletter">
+        <h3>Newsletter</h3>
+        <form>
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+
+      <div id="address">
+        <h3>Our Address</h3>
+        <p>Emmy-Noether-Straße, Munich, Germany</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
