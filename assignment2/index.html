@@ -6,18 +6,17 @@
   <title>Video Background Example</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Make the video cover the entire screen */
     .video-bg {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover; /* keeps video filling screen */
-      z-index: -1; /* send it behind the text */
+      object-fit: cover; 
+      z-index: -1; 
     }
 
-    /* Centered text on top of video */
+  
     .content {
       position: relative;
       height: 100vh;
@@ -27,7 +26,7 @@
       color: white;
       font-size: 2.5rem;
       font-weight: bold;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* makes text readable */
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7); 
     }
   </style>
 </head>
@@ -48,14 +47,11 @@
         </div>
     </div>
 
-  <!-- Video background -->
  <video autoplay muted loop playsinline class="video-bg">
   <source src="wonka.mp4" type="video/mp4">
 </video>
 
 
-
-  <!-- Text on top -->
   <div class="content">
     Welcome to  Willie Wonka world!
   </div>
