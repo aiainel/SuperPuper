@@ -349,7 +349,7 @@ body, html {
     }
 
     .left-image, .right-text {
-      flex: 1; /* split 50/50 */
+      flex: 1; 
       display: flex;
       align-items: center;
       justify-content: center;
@@ -386,35 +386,30 @@ body.stuff-page {
   display: none;
 }
 
-/* ===== STUFF PAGE – readable over background ===== */
 body.stuff-page {
-  /* фон у тебя уже подключён — оставляем */
-  color: #f2f2f4;                 /* базовый цвет текста светлый */
+  color: #f2f2f4;                 
 }
 
-/* лёгкое затемнение фона по всей странице */
 body.stuff-page::before {
   content: "";
   position: fixed;
   inset: 0;
   background: radial-gradient(ellipse at center, rgba(0,0,0,0.20), rgba(0,0,0,0.55));
   pointer-events: none;
-  z-index: -1; /* остаётся позади всего контента */
+  z-index: -1; 
 }
 
-/* сам контент — в полупрозрачной «карте» для супер-читабельности */
 body.stuff-page main.container {
   max-width: 1100px;
   margin: 28px auto 64px;
   padding: 28px 28px 8px;
-  background: rgba(0, 0, 0, 0.35);      /* тёмная вуаль под текстом */
+  background: rgba(0, 0, 0, 0.35);      
   border: 1px solid rgba(255,255,255,0.12);
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-  backdrop-filter: blur(2px);           /* лёгкий блюр заднего фона */
+  backdrop-filter: blur(2px);           
 }
 
-/* заголовок страницы */
 body.stuff-page .page-title {
   color: #ffffff;
   letter-spacing: .5px;
@@ -423,7 +418,6 @@ body.stuff-page .page-title {
   text-shadow: 0 2px 6px rgba(0,0,0,.45);
 }
 
-/* карточки/блоки истории */
 body.stuff-page .story-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -450,13 +444,11 @@ body.stuff-page li {
   text-shadow: 0 1px 2px rgba(0,0,0,.35);
 }
 
-/* списки аккуратнее */
 body.stuff-page .bullets {
   margin: 8px 0 0 18px;
   padding: 0;
 }
 
-/* цитата, если используешь */
 body.stuff-page .quote-block blockquote {
   color: #ffffff;
   font-style: italic;
@@ -466,29 +458,25 @@ body.stuff-page .quote-block blockquote {
   text-shadow: 0 2px 6px rgba(0,0,0,.45);
 }
 
-/* немного воздуха от фиолетовой навигации */
 body.stuff-page .navbar { box-shadow: 0 2px 6px rgba(0,0,0,.25); }
 
-/* адаптив: на широких экранах кладём блоки в 2 колонки */
 @media (min-width: 900px) {
   body.stuff-page .story-grid { grid-template-columns: 1fr 1fr; }
 }
 
-/* ===== FOOTER TEXT FIX ===== */
 footer {
-  color: #000; /* основной цвет текста в футере */
+  color: #000; 
 }
 
 footer h3 {
-  color: #000; /* заголовки тоже чёрные */
+  color: #000; 
 }
 
 footer ul li,
 footer p {
-  color: #000 !important; /* имена и адрес — чёрные */
+  color: #000 !important;
 }
 
-/* === SHOP PAGE GRID (простая и похожая на скрин) === */
 .shop-wrap { max-width: 1200px; margin: 28px auto 64px; padding: 0 16px; }
 .shop-title { text-align: left; margin: 8px 0 18px; }
 
@@ -518,7 +506,6 @@ footer p {
   font-weight: 700; color:#222; margin-top: 2px;
 }
 
-/* responsive like the example (2x/3x/4x columns) */
 @media (min-width: 640px) { .product-grid { grid-template-columns: repeat(2,1fr);} }
 @media (min-width: 980px) { .product-grid { grid-template-columns: repeat(3,1fr);} }
 @media (min-width: 1280px){ .product-grid { grid-template-columns: repeat(4,1fr);} }
