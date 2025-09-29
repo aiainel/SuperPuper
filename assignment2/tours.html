@@ -4,84 +4,123 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/1a847795f5.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&family=Lavishly+Yours&display=swap" rel="stylesheet">
     <title>Tours</title>
 </head>
 <body>
-    <div class="navbar">
-        <div class="navdiv">
-            <ul class="navul">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About us</a></li>
-                <li><a href="tours.html">Stuff</a></li>
-                <li><a href="contact.html">Gambling</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="ourLuckys.html">Our luckys</a></li>
-                <li><a href="tours.html">Tours</a></li>
-                <li><a href="login.html">login</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="tours_container">
-        <h1>OUR TOURS</h1>
-        <div class="tours_container_packages">
-            <div class="classic_tour">
-                <img src="resources/chocolate river.jpg" alt="Chocolate river">
-                <h2>Classic Tour</h2>
-                <ul>
-                    <li>Guided tour of main factory highlights</li>
-                    <li>Visit Chocolate River & Nut Room</li>
-                    <li>Free Wonka chocolate bar</li>
-                    <li>Group photo</li>
-                    <li>Duration:3-4 hours</li>
+    <div class="grid-container"> 
+
+         <header class="navbar">
+          <p class="navbar-logo"><em>wonka</em></p>
+                <ul class="navul">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="stuff.html">Stuff</a></li>
+                    <li><a href="gambling.html">Gambling</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="ourLuckys.html">Our luckys</a></li>
+                    <li><a href="tours.html">Tours</a></li>
+                    <li><a href="login.html">login</a></li>
                 </ul>
-            </div>
-            <div class="deluxe_tour">
-                <img src="resources/cafe.jpg" alt="Our cafe">
-                <h2>Deluxe Tour</h2>
-                <ul>
-                    <li>All Classic Tour features</li>
-                    <li>Candy-making workshop</li>
-                    <li>Taste exclusive Wonka treats</li>
-                    <li>Small group, behind-the-scenes access</li>
-                    <li>Duration:5-6 hours</li>
-                </ul>
-            </div>
-            <div class="vip_tour">
-                <img src="resources/oompas.png" alt="Oompa Loompas">
-                <h2>VIP Tour</h2>
-                <ul>
-                    <li>All Deluxe Tour features</li>
-                    <li>Private tour guide</li>
-                    <li>Meet & greet with Oompa Loompas</li>
-                    <li>Exclusive souvenir gift box and wrapped-up secret presents</li>
-                    <li>Duration:Full day experience</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <footer>
-        <div class="footer-content">
-            <div id="people-list">
-                <h3>Website Makers</h3>
-                <ul>
-                    <li>Mansur Zalel</li>
-                    <li>Anel Kashym</li>
-                    <li>Ali Kenzhegaliyev</li>
-                    <li>Moldir Kabdykarim</li>
-                </ul>
-            </div>
-            <div id="newsletter">
-                <h3>Newsletter</h3>
-                <form>
-                     <input type="email" placeholder="Enter your email" required>
-                     <button type="submit">Subscribe</button>
-                </form>
-            </div>
-            <div id="address">
-                <h3>Our Address</h3>
-                <p>Emmy‑Noether‑Straße, Munich, Germany</p>
-            </div> 
-        </div>
-    </footer>
+        </header>
+
+         <aside class="sidebar">
+            <h3>Menu</h3>
+        <ul>
+            <li><a href="#"> <i class="fa-solid fa-house"></i>Dashboard</a></li>
+            <li> <a href="#"> <i class="fa-solid fa-pen"></i> Posts</a></li>
+            <li><a href="#"> <i class="fa-solid fa-photo-film"></i>Media</a></li>
+            <li><a href="#"> <i class="fa-solid fa-wrench"></i>Settings</a></li>
+            <li><a href="#"> <i class="fa-solid fa-file"></i>Pages</a></li>
+            <li><a href="#"> <i class="fa-solid fa-comment"></i></i>Comments</a></li>
+            <li><a href="#"> <i class="fa-solid fa-eye"></i>Appearance</a></li>
+            
+            <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
+        </ul>
+       </aside>
+
+        <main class="tours-container">
+                <h1>OUR TOURS</h1>
+                <div class="tours-container_packages">
+
+                    <div class="classic_tour">
+                        <img src="resources/thumbs-up.png" alt="Chocolate river">
+                        <h2>Classic Tour</h2>
+                        <ul>
+                            <li>Chocolate Tasting</li>
+                            <li>Candy-Making Workshop</li>
+                            <li>Chocolate River Boat Ride</li>
+                            <li>~Interactive Nuts Fast-Sorting competition</li>
+                            <li>Duration:3-4 hours</li>
+                        </ul>
+                         <div class="tour-footer">
+                            <button class="tour-button">Book Now</button>
+                            <span class="tour-price">💰 $299</span>
+                            
+                        </div>
+                    </div>
+
+                    <div class="deluxe_tour">
+                        <img src="resources/wealth.png" alt="Our cafe">
+                        <h2>Deluxe Tour</h2>
+                        <ul>
+                            <li>All Classic Tour features</li>
+                            <li>Chewing Gum Flavor Challenge</li>
+                            <li>Candy Puzzle Hunt</li>
+                            <li>Small group, behind-the-scenes access</li>
+                            <li>Duration:5-6 hours</li>
+                        </ul>
+                         <div class="tour-footer">
+                             <button class="tour-button">Book Now</button>
+                            <span class="tour-price">💰 $599</span>
+                           
+                        </div>
+                    </div>
+                    <div class="vip_tour">
+                        <img src="resources/vip.png" alt="Oompa Loompas">
+                        <h2>VIP Tour</h2>
+                        <ul>
+                            <li>All Deluxe Tour features</li>
+                            <li>Everlasting Gobstopper Decorating</li>
+                            <li>Oompa-Loompa Dance Lesson</li>
+                            <li>Wonka Costume Dress-Up competition</li>
+                            <li>Duration:Full day experience</li>
+                        </ul>
+                         <div class="tour-footer">
+                            <button class="tour-button">Book Now</button>
+                            <span class="tour-price">💰 $799</span>
+                            
+                        </div>
+                    </div>
+                </div>
+        </main>
+       <footer class="footer">
+            <div class="footer-content">
+                    <div id="people-list">
+                        <h3>Website Makers</h3>
+                        <ul>
+                            <li>Mansur Zalel</li>
+                            <li>Anel Kashym</li>
+                            <li>Ali Kenzhegaliyev</li>
+                            <li>Moldir Kabdykarim</li>
+                        </ul>
+                    </div>
+                    <div id="newsletter">
+                        <h3>Newsletter</h3>
+                        <form>
+                            <input type="email" placeholder="Enter your email" required>
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                    <div id="address">
+                        <h3>Our Address</h3>
+                        <p>Emmy‑Noether‑Straße, Munich, Germany</p>
+                    </div> 
+                </div>
+            </footer>
+   </div> 
 </body>
 </html>
