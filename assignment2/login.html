@@ -5,71 +5,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form login and password</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/1a847795f5.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&family=Lavishly+Yours&display=swap" rel="stylesheet">
 </head>
-<body class="purple-background">
-    <div class="navbar">
-        <div class="navdiv">
-            <ul class="navul">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About us</a></li>
-                <li><a href="tours.html">Stuff</a></li>
-                <li><a href="contact.html">Gambling</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="ourLuckys.html">Our luckys</a></li>
-                <li><a href="tours.html">Tours</a></li>
-                <li><a href="login.html">login</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="image-form">
-        <img src="resources/chocolate.jpeg" alt="Login image">
-        <div class="login_form">
-        <form> 
-            <h1>Login </h1>
-            <div class="input-box">
-                <input type="text" placeholder="Username" required>
-            </div>
-            <div class="input-box">
-                <input type="password" placeholder="Password" required>
-            </div>
-            <div id="remember-forgot">
-                <label><input type="checkbox">Remember me</label>
-                <a href="#">Forgot Password?</a>
-            </div>
-            <button type="submit" class="btn_login">Login</button>
-            <div id="register-link">
-                <p>Don't have an account? <a href="#">Register</a></p>
-            </div>
-        </form>
-    </div>
+<body>
+    <div class="grid-container">
 
-    </div>
-    
-<footer>
-        <div class="footer-content">
-            <div id="people-list">
-                <h3>Website Makers</h3>
-                <ul>
-                    <li>Mansur Zalel</li>
-                    <li>Anel Kashym</li>
-                    <li>Ali Kenzhegaliyev</li>
-                    <li>Moldir Kabdykarim</li>
+        <header class="navbar">
+          <p class="navbar-logo"><em>wonka</em></p>
+                <ul class="navul">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="stuff.html">Stuff</a></li>
+                    <li><a href="gambling.html">Gambling</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="ourLuckys.html">Our luckys</a></li>
+                    <li><a href="tours.html">Tours</a></li>
+                    <li><a href="login.html">login</a></li>
                 </ul>
-            </div>
-            <div id="newsletter">
-                <h3>Newsletter</h3>
-                <form>
-                     <input type="email" placeholder="Enter your email" required>
-                     <button type="submit">Subscribe</button>
-                </form>
-            </div>
-            <div id="address">
-                <h3>Our Address</h3>
-                <p>Emmy‑Noether‑Straße, Munich, Germany</p>
-            </div> 
-        </div>
-    </footer>
+        </header>
 
+       <aside class="sidebar">
+        <h3>Menu</h3>
+        <ul>
+            <li><a href="#"> <i class="fa-solid fa-house"></i>Dashboard</a></li>
+            <li> <a href="#"> <i class="fa-solid fa-pen"></i> Posts</a></li>
+            <li><a href="#"> <i class="fa-solid fa-photo-film"></i>Media</a></li>
+            <li><a href="#"> <i class="fa-solid fa-wrench"></i>Settings</a></li>
+            <li><a href="#"> <i class="fa-solid fa-file"></i>Pages</a></li>
+            <li><a href="#"> <i class="fa-solid fa-comment"></i></i>Comments</a></li>
+            <li><a href="#"> <i class="fa-solid fa-eye"></i>Appearance</a></li>
+            
+            <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
+        </ul>
+       </aside>
+
+
+    <main class="main-login">
+  <section class="image-form">
+    <img src="resources/chocolate.jpeg" alt="Profile Image" class="profile-image">
+
+    <form class="login-form">
+      <h1>Login</h1>
+
+      <div class="input-box">
+        <input type="text" placeholder="Username" required>
+      </div>
+
+      <div class="input-box">
+        <input type="password" placeholder="Password" required>
+      </div>
+
+      <div id="remember-forgot">
+        <label>
+          <input type="checkbox"> Remember me
+        </label>
+        <a href="#">Forgot password?</a>
+      </div>
+
+      <button type="submit" class="btn-login">Login</button>
+
+      <div id="register-link">
+        <p>Don't have an account? <a href="#">Register</a></p>
+      </div>
+    </form>
+  </section>
+</main>
+
+<footer class="footer">
+    <div class="footer-content">
+                    <div id="people-list">
+                        <h3>Website Makers</h3>
+                        <ul>
+                            <li>Mansur Zalel</li>
+                            <li>Anel Kashym</li>
+                            <li>Ali Kenzhegaliyev</li>
+                            <li>Moldir Kabdykarim</li>
+                        </ul>
+                    </div>
+                    <div id="newsletter">
+                        <h3>Newsletter</h3>
+                        <form>
+                            <input type="email" placeholder="Enter your email" required>
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                    <div id="address">
+                        <h3>Our Address</h3>
+                        <p>Emmy‑Noether‑Straße, Munich, Germany</p>
+                    </div> 
+                </div>
+            </footer>
+    </div>
     
 </body>
 </html>
