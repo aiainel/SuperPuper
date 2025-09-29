@@ -4,58 +4,58 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Video Background Example</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    .video-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover; 
-      z-index: -1; 
-    }
 
-  
-    .content {
-      position: relative;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      font-size: 2.5rem;
-      font-weight: bold;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.7); 
-    }
+  <link rel="stylesheet" href="styles.css">
+   <script src="https://kit.fontawesome.com/1a847795f5.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&family=Lavishly+Yours&display=swap" rel="stylesheet">
+  <style>
+    
   </style>
 </head>
+
 <body>
+ <div class="grid-container"> 
 
-    <div class="navbar">
-        <div class="navdiv">
-            <ul class="navul">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About us</a></li>
-                <li><a href="tours.html">Stuff</a></li>
-                <li><a href="contact.html">Gambling</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="ourLuckys.html">Our luckys</a></li>
-                <li><a href="tours.html">Tours</a></li>
-                <li><a href="login.html">login</a></li>
-            </ul>
-        </div>
-    </div>
+         <header class="navbar">
+          <p class="navbar-logo"><em>wonka</em></p>
+                <ul class="navul">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="stuff.html">Stuff</a></li>
+                    <li><a href="gambling.html">Gambling</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="ourLuckys.html">Our luckys</a></li>
+                    <li><a href="tours.html">Tours</a></li>
+                    <li><a href="login.html">login</a></li>
+                </ul>
+        </header>
 
- <video autoplay muted loop playsinline class="video-bg">
-  <source src="wonka.mp4" type="video/mp4">
-</video>
+        <aside class="sidebar">
+          <h3> Menu</h3>
+        <ul>
+            <li><a href="#"> <i class="fa-solid fa-house"></i>Dashboard</a></li>
+            <li> <a href="#"> <i class="fa-solid fa-pen"></i> Posts</a></li>
+            <li><a href="#"> <i class="fa-solid fa-photo-film"></i>Media</a></li>
+            <li><a href="#"> <i class="fa-solid fa-wrench"></i>Settings</a></li>
+            <li><a href="#"> <i class="fa-solid fa-file"></i>Pages</a></li>
+            <li><a href="#"> <i class="fa-solid fa-comment"></i></i>Comments</a></li>
+            <li><a href="#"> <i class="fa-solid fa-eye"></i>Appearance</a></li>
+            
+            <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
+        </ul>
+       </aside>
 
-
+<main class="main-index">
+  <video autoplay muted loop playsinline class="video-bg">
+    <source src="resources/wonka.mp4" type="video/mp4">
+  </video>
   <div class="content">
-    Welcome to  Willie Wonka world!
+      <em> Welcome to  Willie Wonka world!</em>
   </div>
-
+</main>
+  
   <footer>
         <div class="footer-content">
             <div id="people-list">
@@ -80,5 +80,6 @@
             </div> 
         </div>
     </footer>
+ </div>
 </body>
 </html>
