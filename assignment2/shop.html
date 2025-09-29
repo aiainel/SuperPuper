@@ -1,80 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shop — Sweets</title>
-  <link rel="stylesheet" href="./styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sweets Shop</title>
+  <link rel="stylesheet" href="shop.css">
+  <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/1a847795f5.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&family=Lavishly+Yours&display=swap" rel="stylesheet">
 </head>
 <body>
-  
-  <nav class="navbar">
-    <div class="navdiv">
-      <ul class="navul">
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./about.html">About us</a></li>
-        <li><a href="./stuff.html">Stuff</a></li>
-        <li><a href="./gambling.html">Gambling</a></li>
-        <li><a href="./shop.html" class="active">Shop</a></li>
-        <li><a href="./luckys.html">Our luckys</a></li>
-        <li><a href="./tours.html">Tours</a></li>
-        <li><a href="./login.html">Login</a></li>
-      </ul>
-    </div>
-  </nav>
+    <div class="grid-container"> 
+
+         <header class="navbar">
+          <p class="navbar-logo"><em>wonka</em></p>
+                <ul class="navul">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="stuff.html">Stuff</a></li>
+                    <li><a href="gambling.html">Gambling</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="ourLuckys.html">Our luckys</a></li>
+                    <li><a href="tours.html">Tours</a></li>
+                    <li><a href="login.html">login</a></li>
+                </ul>
+        </header>
+
+         <aside class="sidebar">
+          <h3> Menu</h3>
+        <ul>
+            <li><a href="#"> <i class="fa-solid fa-house"></i>Dashboard</a></li>
+            <li> <a href="#"> <i class="fa-solid fa-pen"></i> Posts</a></li>
+            <li><a href="#"> <i class="fa-solid fa-photo-film"></i>Media</a></li>
+            <li><a href="#"> <i class="fa-solid fa-wrench"></i>Settings</a></li>
+            <li><a href="#"> <i class="fa-solid fa-file"></i>Pages</a></li>
+            <li><a href="#"> <i class="fa-solid fa-comment"></i></i>Comments</a></li>
+            <li><a href="#"> <i class="fa-solid fa-eye"></i>Appearance</a></li>
+            
+            <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
+        </ul>
+       </aside>
 
   <main class="shop-wrap">
     <h1 class="shop-title">Sweets</h1>
-
     <section class="product-grid">
       <article class="pcard">
-        <img class="pimg" src="./resources/rahatchococubedef.jpg" alt="Rahat Cube 275g">
+        <div class="pimg-wrap">
+          <img class="pimg" src="./resources/rahatchococubedef.jpg" alt="Rahat Cube 275g">
+          <div class="pcaption">Classic delight</div>
+        </div>
         <h3 class="pname">Rahat Cube 275g</h3>
         <div class="pprice">3 600 ₸ / pcs</div>
       </article>
 
       <article class="pcard">
-        <img class="pimg" src="./resources/65rahatchococube.jpg" alt="Rahat 65% Cocoa Cube 275g">
+        <div class="pimg-wrap">
+          <img class="pimg" src="./resources/65rahatchococube.jpg" alt="Rahat 65% Cocoa Cube 275g">
+          <div class="pcaption">Rich & smooth</div>
+        </div>
         <h3 class="pname">Rahat 65% Cocoa Cube 275g</h3>
         <div class="pprice">2 687 ₸ / pcs</div>
       </article>
 
       <article class="pcard">
-        <img class="pimg" src="./resources/70rahatchococube.jpg" alt="Rahat 70% Cocoa Cube 275g">
+        <div class="pimg-wrap">
+          <img class="pimg" src="./resources/70rahatchococube.jpg" alt="Rahat 70% Cocoa Cube 275g">
+          <div class="pcaption">Bold flavor</div>
+        </div>
         <h3 class="pname">Rahat 70% Cocoa Cube 275g</h3>
         <div class="pprice">4 232 ₸ / pcs</div>
       </article>
 
       <article class="pcard">
-        <img class="pimg" src="./resources/gorkirahatcube.jpg" alt="Rahat 80% Cocoa Cube 275g">
+        <div class="pimg-wrap">
+          <img class="pimg" src="./resources/gorkirahatcube.jpg" alt="Rahat 80% Cocoa Cube 275g">
+          <div class="pcaption">Rich intensity</div>
+        </div>
         <h3 class="pname">Rahat 80% Cocoa Cube 275g</h3>
         <div class="pprice">2 687 ₸ / pcs</div>
       </article>
 
       <article class="pcard">
-        <img class="pimg" src="./resources/kazakhstanchocolate.jpg" alt="Rahat Bar 100g">
+        <div class="pimg-wrap">
+          <img class="pimg" src="./resources/kazakhstanchocolate.jpg" alt="Rahat Bar 100g">
+          <div class="pcaption">Timeless treat</div>
+        </div>
         <h3 class="pname">Rahat Bar 100g</h3>
         <div class="pprice">1 000 ₸ / pcs</div>
       </article>
 
       <article class="pcard">
-        <img class="pimg" src="./resources/65rahatchocoplitka.jpg" alt="Rahat 65% Bar 100g">
+        <div class="pimg-wrap">
+          <img class="pimg" src="./resources/65rahatchocoplitka.jpg" alt="Rahat 65% Bar 100g">
+          <div class="pcaption">Dark & refined</div>
+        </div>
         <h3 class="pname">Rahat 65% Bar 100g</h3>
         <div class="pprice">1 298 ₸ / pcs</div>
       </article>
 
       <article class="pcard">
-        <img class="pimg" src="./resources/70rahatchocoplitka.jpg" alt="Rahat 70% Bar 100g">
+        <div class="pimg-wrap">
+          <img class="pimg" src="./resources/70rahatchocoplitka.jpg" alt="Rahat 70% Bar 100g">
+          <div class="pcaption">Elegant bite</div>
+        </div>
         <h3 class="pname">Rahat 70% Bar 100g</h3>
         <div class="pprice">1 298 ₸ / pcs</div>
       </article>
 
       <article class="pcard">
-        <img class="pimg" src="./resources/80plitkarahat.jpg" alt="Rahat 80% Bar 100g">
+        <div class="pimg-wrap">
+          <img class="pimg" src="./resources/80plitkarahat.jpg" alt="Rahat 80% Bar 100g">
+          <div class="pcaption">For connoisseurs</div>
+        </div>
         <h3 class="pname">Rahat 80% Bar 100g</h3>
         <div class="pprice">1 716 ₸ / pcs</div>
       </article>
+
+        <article class="pcard">
+        <div class="pimg-wrap">
+          <img class="pimg" src="./resources/rakhat almaty.jpg" alt="Rahat 80% Bar 100g">
+          <div class="pcaption">Taste of mountains</div>
+        </div>
+        <h3 class="pname">Rahat 80% Bar 100g</h3>
+        <div class="pprice">1 716 ₸ / pcs</div>
+      </article>
+
+      <article class="pcard">
+        <div class="pimg-wrap">
+          <img class="pimg" src="./resources/iLoveRakhat.jpg" alt="Rahat 80% Bar 100g">
+          <div class="pcaption">For true rakhat lovers</div>
+        </div>
+        <h3 class="pname">Rahat 80% Bar 100g</h3>
+        <div class="pprice">1 716 ₸ / pcs</div>
+      </article>
+
+      <article class="pcard">
+        <div class="pimg-wrap">
+          <img class="pimg" src="./resources/chocolate box.jpg" alt="Rahat 80% Bar 100g">
+          <div class="pcaption">Great gift</div>
+        </div>
+        <h3 class="pname">Rahat 80% Bar 100g</h3>
+        <div class="pprice">1 716 ₸ / pcs</div>
+      </article>
+
+      <article class="pcard">
+        <div class="pimg-wrap">
+          <img class="pimg" src="./resources/rakhat caramel.jpg" alt="Rahat 80% Bar 100g">
+          <div class="pcaption">High-class caramel</div>
+        </div>
+        <h3 class="pname">Rahat 80% Bar 100g</h3>
+        <div class="pprice">1 716 ₸ / pcs</div>
+      </article>
+
     </section>
+
   </main>
 
   <footer>
@@ -103,6 +185,7 @@
       </div>
     </div>
   </footer>
+  </div>
 
 </body>
 </html>
