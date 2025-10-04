@@ -7,42 +7,72 @@
   <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/1a847795f5.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&family=Lavishly+Yours&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 </head>
 <body>
-   <div class="grid-container"> 
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#9370DB;">
+  <div class="container-fluid">
+  <a class="navbar-brand fs-4 fst-italic" href="#">
+  <i class="fa-solid fa-candy-cane text-pink"></i>
+  Willy Wonka
+</a>
 
-         <header class="navbar">
-          <p class="navbar-logo"><em>wonka</em></p>
-                <ul class="navul">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About us</a></li>
-                    <li><a href="stuff.html">Stuff</a></li>
-                    <li><a href="gambling.html">Gambling</a></li>
-                    <li><a href="shop.html">Shop</a></li>
-                    <li><a href="ourLuckys.html">Our luckys</a></li>
-                    <li><a href="tours.html">Tours</a></li>
-                    <li><a href="login.html">login</a></li>
-                </ul>
-        </header>
 
-        <aside class="sidebar">
-          <h3> Menu</h3>
-        <ul>
-            <li><a href="#"> <i class="fa-solid fa-house"></i>Dashboard</a></li>
-            <li> <a href="#"> <i class="fa-solid fa-pen"></i> Posts</a></li>
-            <li><a href="#"> <i class="fa-solid fa-photo-film"></i>Media</a></li>
-            <li><a href="#"> <i class="fa-solid fa-wrench"></i>Settings</a></li>
-            <li><a href="#"> <i class="fa-solid fa-file"></i>Pages</a></li>
-            <li><a href="#"> <i class="fa-solid fa-comment"></i></i>Comments</a></li>
-            <li><a href="#"> <i class="fa-solid fa-eye"></i>Appearance</a></li>
-            
-            <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto d-flex gap-3">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="stuff.html">Stuff</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="shop.html">Shop</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="gambling.html">Gambling</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="ourluckys.html">ourLuckys</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="tours.html">Tours</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="login.html">Login</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+ <div class="container-fluid">
+    <div class="row min-vh-100"> 
+      <aside class="col-12 col-md-3 col-lg-2 p-3 d-flex flex-column" style="background-color:#C7B7E8;">
+        <h3 class="text-center text-white fw-bold">Menu</h3>
+        <ul class="nav flex-column flex-grow-1">
+          <li class="nav-item "><a class="nav-link text-white" href="#"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+          <li class="nav-item "><a class="nav-link text-white" href="#"><i class="fa-solid fa-pen"></i> Posts</a></li>
+          <li class="nav-item "><a class="nav-link text-white" href="#"><i class="fa-solid fa-photo-film"></i> Media</a></li>
+          <li class="nav-item "><a class="nav-link text-white" href="#"><i class="fa-solid fa-wrench"></i> Settings</a></li>
+          <li class="nav-item "><a class="nav-link text-white" href="#"><i class="fa-solid fa-file"></i> Pages</a></li>
+          <li class="nav-item "><a class="nav-link text-white" href="#"><i class="fa-solid fa-comment"></i> Comments</a></li>
+          <li class="nav-item "><a class="nav-link text-white" href="#"><i class="fa-solid fa-eye"></i> Appearance</a></li>
+          <li class="nav-item mt-auto "><a class="nav-link text-white fw-bold" href="#"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
         </ul>
-       </aside>
+      </aside>
+       
  
   <main class="main-stuff">
     <h1 class="page-title">How Willy Wonka Met the Oompa-Loompas</h1>
@@ -130,12 +160,13 @@
   </main>
 
 
-  <footer>
-    <div class="footer-content">
+    <footer class="footer bg-white navbar-light py-4 shadow-lg">
+  <div class="container">
+    <div class="row footer-content">
 
-      <div id="people-list">
-        <h3>Website Makers</h3>
-        <ul>
+      <div class="col-12 col-md-4 mb-4 mb-md-0" id="people-list">
+        <h5 class="mb-3">Website Makers</h5>
+        <ul class="list-unstyled">
           <li>Mansur Zalel</li>
           <li>Anel Kashym</li>
           <li>Ali Kenzhegaliyev</li>
@@ -143,21 +174,23 @@
         </ul>
       </div>
 
-      <div id="newsletter">
-        <h3>Newsletter</h3>
-        <form>
-          <input type="email" placeholder="Enter your email" required>
-          <button type="submit">Subscribe</button>
+      <div class="col-12 col-md-4 mb-4 mb-md-0" id="newsletter">
+        <h5 class="mb-3">Newsletter</h5>
+        <form class="d-flex flex-column flex-sm-row gap-2">
+          <input type="email" class="form-control" placeholder="Enter your email" required>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
         </form>
       </div>
 
-      <div id="address">
-        <h3>Our Address</h3>
-        <p>Emmy-Noether-Straße, Munich, Germany</p>
+      <div class="col-12 col-md-4" id="address">
+        <h5 class="mb-3">Our Address</h5>
+        <p>Emmy‑Noether‑Straße, Munich, Germany</p>
       </div>
 
     </div>
-  </footer>
+  </div>
+</footer>
  </div>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
