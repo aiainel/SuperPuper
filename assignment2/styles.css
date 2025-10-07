@@ -1,12 +1,6 @@
-*{
-    text-decoration:none;
-}
-html, body{
-    margin:0;
-    font-family: Arial, sans-serif;
-    background-color: #fff;
-    height: 100%;
-}
+
+
+
 
 /*******************************
    NAVBAR STYLES
@@ -17,6 +11,25 @@ html, body{
     transition: background-color 0.3s ease;
 }
 
+/*******************************
+   SIDEBAR STYLES
+*******************************/
+
+
+/*******************************
+   FOOTER STYLES
+*******************************/
+
+
+
+/* =======================
+   LOGIN PAGE 
+  ======================== */
+
+/* =======================
+   HOME PAGE 
+  ======================== */
+
 /* =======================
    TOURS PAGE 
   ======================== */
@@ -24,6 +37,7 @@ html, body{
     display: flex;
     flex-wrap: nowrap; 
 }
+
 .tours-container {
   flex: 1; 
   padding-top: 80px;
@@ -167,16 +181,12 @@ html, body{
         flex: 0 1 100%;
       }
     } 
+
 /* =======================
    GAMBLING PAGE 
   ======================== */
-.gambling-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  margin:20px;
-}
+
+
 
 .flip-card {
   position: relative;
@@ -206,370 +216,117 @@ html, body{
   transform: rotateY(0deg);
 }
 
-#gambling-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  font-family: fantasy;
-  font-weight: bold;
-}
-
 
 /* =======================
    ABOUT PAGE 
   ======================== */
-   
-.main-about { 
-  grid-area:main; 
-  display: flex; 
-  flex-wrap: wrap; 
-  margin: 30px;
-  background-color: rgb(146, 205, 225); 
-  border-radius:0 50px 50px 0; 
-  overflow: hidden; 
-} 
- .left-image, .right-text { 
-    display: flex; 
-    flex:1 1 50%;
-    flex-direction: row; 
-    align-items: center; 
-    color: white; 
-    box-sizing: border-box; 
-} 
-
-.left-image {
-    display: flex;
-    justify-content: flex-start;
-}
-.left-image img {
-  max-width: 100%;  
-  height: auto;
-  display: block;
+.rounded-custom {
+    border-radius: 100px ;
 }
 
-  .right-text {
-    padding: 10px;
-    font-size: 1.2rem; 
-    color: white;
-    text-align: justify;
-    display: block;
+body {
+    font-size: 20px;
 }
 
-.right-text h3 {
-  font-size: 25px;
-  font-weight: bold;
+h3 {
+    font-size: 2.2rem;
+}
+
+p {
+    font-size: 1.2rem;
 }
 
 
-.main-index {
-  grid-area: main;
-  position: relative;
-  overflow: hidden;
-  background: transparent;
+@media (max-width: 1200px) {
+    body {
+        font-size: 18px;
+    }
+    h3 {
+        font-size: 2rem;
+    }
+    p {
+        font-size: 1.1rem;
+    }
 }
 
-.main-index .video-bg {
-  position: relative;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  display: block;
-  z-index: 0;
-  background: transparent;
+
+@media (max-width: 992px) {
+    body {
+        font-size: 16px;
+    }
+    h3 {
+        font-size: 1.8rem;
+    }
+    p {
+        font-size: 1rem;
+    }
 }
 
-.main-index .content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  font-size: 40px;
-  color: #fff;
-  text-align: center;
-  padding: 30px;
-  pointer-events: auto;
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+    h3 {
+        font-size: 1.5rem;
+    }
+    p {
+        font-size: 0.9rem;
+    }
 }
 
-.main-index+footer {
-  margin-top: 0;
-}
 
 
 /* =======================
    STUFF PAGE 
   ======================== */
-
-
 .main-stuff {
-  grid-area: main;
-  border: 1px solid rgba(255,255,255,0.12);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-  backdrop-filter: blur(2px);
+  background: url("resources/oompa-loompas-for-stuff.png") center/cover no-repeat fixed;
+  min-height: 100vh;
   padding: 28px;
-  height: 100%;
-  background: url("./resources/oompa-loompas-for-stuff.png") center/cover no-repeat fixed;
   color: #f2f2f4;
 }
 
+.story-card {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  border-radius: 14px !important;
+  padding: 18px !important;
+  backdrop-filter: blur(2px) !important;
+}
 
 .page-title {
   color: #ffffff;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
   text-align: center;
-  margin: 4px 0 18px;
-  text-shadow: 0 2px 6px rgba(0,0,0,.45);
+  margin-bottom: 18px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
 }
 
-
-.story-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-}
-
- .story-card {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255,255,255,0.14);
-  border-radius: 14px;
-  padding: 18px 18px 12px;
-}
-
-
- .main-stuff h2 {
+.main-stuff h2 {
   color: #ffffff;
-  margin: 0 0 8px;
-  text-shadow: 0 1px 3px rgba(0,0,0,.45);
+  margin-bottom: 8px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
 }
 
 .main-stuff p,
 .main-stuff li {
   color: #eef1f6;
   line-height: 1.65;
-  text-shadow: 0 1px 2px rgba(0,0,0,.35);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
 }
 
 .main-stuff .bullets {
-  margin: 8px 0 0 18px;
+  margin-left: 18px;
   padding: 0;
 }
 
 
-.main-stuff .quote-block blockquote {
-  color: #ffffff;
-  font-style: italic;
-  border-left: 4px solid rgba(255,255,255,0.35);
-  padding-left: 12px;
-  margin: 8px 0 0;
-  text-shadow: 0 2px 6px rgba(0,0,0,.45);
-}
 
-
-
-footer {
-  color: #000; 
-}
-
-footer h3 {
-  color: #000; 
-}
-
-footer ul li,
-footer p {
-  color: #000 !important; 
-}
-
-/* =======================
-   SHOP PAGE 
-  ======================== */
-
-.shop-wrap {
-  grid-area: main;
-  max-width: 1200px;
-  margin: 28px auto 64px;
-  padding: 0 16px;
-}
-
-.shop-title {
-  text-align: left;
-  margin: 8px 0 18px;
-}
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 26px;
-  padding: 20px;
-}
-
-.pcard {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 10px;
-  background: #fff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  transition: transform 0.2s ease;
-  height: 100%;
-}
-
-.pcard:hover {
-  transform: translateY(-5px);
-}
-
-.pimg-wrap {
-  position: relative;
-  width: 100%;
-  height: 220px;
-  overflow: hidden;
-}
-
-.pimg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.pcaption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(147, 112, 219, 0.6);
-  color: #fff;
-  padding: 10px;
-  text-align: center;
-  font-size: 14px;
-  opacity: 0;
-  transform: translateY(100%);
-  transition: all 0.3s ease;
-}
-
-.pimg-wrap:hover .pcaption {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.pname {
-  font-size: 16px;
-  font-weight: 600;
-  margin: 10px 14px 6px;
-  color: #222;
-}
-
-.pprice {
-  font-weight: 700;
-  color: #66023C;
-  margin: 0 14px 14px;
-  font-size: 1.2rem;
-}
-
-
-.product-grid > .pcard {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
 
 /* =======================
    OURLUCKYS PAGE 
   ======================== */
-.lucky_card {
-  grid-area: main;
-  display: flex;
-  flex-direction: column; 
-  justify-self: center;
-  align-items: center; 
-  margin-top: 80px;
-  max-width: 1000px;
-}
-
-.lucky_card h1 {
-  margin-bottom: 30px;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #9370DB;
-  text-align: center;
-}
-
-.cards {
-  display: flex;
-  flex-wrap: wrap; 
-  gap: 35px;
-  justify-content: flex-start; 
-  width: 100%;
-}
-
-.lucky_card .box {
-  flex: 0 0 calc((100% - 70px) / 3); 
-  min-width: 250px;
-  box-sizing: border-box;
-  background: #fff;
-  border: 2px solid #9370DB;
-  border-radius: 10px;
-  padding: 16px;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-
-.cards::after {
-  content: "";
-  flex: auto;
-}
-
-.box img {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-  object-position: top; 
-  border-radius: 8px;
-  margin-bottom: 12px;
-}
-
-.box h2 {
-  font-size: 1.25rem;
-  margin: 8px 0;
-  color: #333;
-}
-
-.box .description {
-  font-size: 0.9rem;
-  color: #555;
-  margin: 6px 0 12px;
-}
-
-.box .win_date {
-  font-size: 0.85rem;
-  font-weight: bold;
-  color: #9370DB;
-}
-
-.box:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-}
-.card-button {
-  padding: 10px 16px;
-  margin-top: 10px;
-  background-color: #9370DB;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-.card-button:hover {
-  background-color: #7a5bb5;
-  transform: scale(1.05);
-}
-
-
 
 
 
