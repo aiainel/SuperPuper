@@ -16,7 +16,7 @@
         <i class="fa-solid fa-candy-cane text-pink"></i>
         Willy Wonka
       </a>
-
+<span id="datetime" class="text-white ms-3 fw-bold"></span>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
               data-bs-target="#navbarSupportedContent"
               aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -57,7 +57,7 @@
 
   <div class="container-fluid">
     <div class="row"> 
-      <aside class="col-12 col-md-3 col-lg-2 p-3 d-flex flex-column  sticky-top" style="background-color:#C7B7E8; top:61px;">
+      <aside class="col-12 col-md-3 col-lg-2 p-3 d-flex flex-column" style="background-color:#C7B7E8; ">
         <h3 class="text-center text-white fw-bold">Menu</h3>
         <ul class="nav flex-column flex-grow-1">
           <li class="nav-item "><a class="nav-link text-white" href="#"><i class="fa-solid fa-house"></i> Dashboard</a></li>
@@ -67,7 +67,7 @@
           <li class="nav-item "><a class="nav-link text-white" href="#"><i class="fa-solid fa-file"></i> Pages</a></li>
           <li class="nav-item "><a class="nav-link text-white" href="#"><i class="fa-solid fa-comment"></i> Comments</a></li>
           <li class="nav-item "><a class="nav-link text-white" href="#"><i class="fa-solid fa-eye"></i> Appearance</a></li>
-          <li class="nav-item mt-5 "><a class="nav-link text-white fw-bold" href="#"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+          <li class="nav-item mt-auto "><a class="nav-link text-white fw-bold" href="#"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
         </ul>
       </aside>
       <main class="tours-container">
@@ -104,6 +104,7 @@
               <span class="tour-price">💰 $599</span>
             </div>
           </div>
+
           <div class="vip_tour">
             <img src="resources/vip.png" alt="Oompa Loompas">
             <h2>VIP Tour</h2>
@@ -119,41 +120,41 @@
               <span class="tour-price">💰 $799</span>
             </div>
           </div>
-      </div>
+        </div>
 
-      <div class="text-center mt-5 pt-5">
-        <h2 class="fw-bold" style=" color:#9370DB">Explore the Willy Wonka’s Factory</h2>
-        <p class="text-muted fs-5 w-75 mx-auto">
-          Step into a world of imagination and sweetness! Each room in the factory is filled with surprises — from rivers of chocolate to forests made of candy. Scroll through to discover them all.
-        </p>
-      </div>
+         <div class="text-center mt-5 pt-5">
+          <h2 class="fw-bold" style=" color:#9370DB">Explore the Willy Wonka’s Factory</h2>
+          <p class="text-muted fs-5 w-75 mx-auto">
+            Step into a world of imagination and sweetness! Each room in the factory is filled with surprises — from rivers of chocolate to forests made of candy. Scroll through to discover them all.
+          </p>
+        </div>
 
-      <div id="carouselControls" class="carousel slide mb-5 mx-auto" data-bs-ride="carousel" style="max-width:1000px;">
+      <div id="carouselControls" class="carousel carousel-fade slide mb-5 mx-auto" data-bs-ride="carousel" style="max-width:1000px;">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <div class="card w-100 h-100" style="max-width: 25rem; min-height: 30rem;">
+            <div class="card w-100 h-80 mx-auto" style="max-width: 25rem; min-height: 30rem;">
             <img src="resources/beverage-room.webp" class="card-img-top" alt="..." style="height: 18rem; object-fit: cover;" >
               <div class="card-body">
                 <h5 class="card-title">Beverage room</h5>
                 <p class="card-text">The place where you can make the fizziest cocktails in the world!.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-          </div>
-        </div>
-  
-        <div class="carousel-item">
-            <div class="card w-100 h-80 mx-auto" style="max-width: 25rem; min-height: 30rem;" >
-              <img src="resources/candy rain.jpg" class="card-img-top" alt="Candy Rain Room" style="height: 18rem; object-fit: cover;" >
-              <div class="card-body">
-                <h5 class="card-title">Candy Rain Room</h5>
-                <p class="card-text">A magical place where colorful candy droplets fall from the sky!</p>
                 <a href="#" class="btn btn-primary">Explore</a>
               </div>
             </div>
-        </div>
+          </div>
+  
+          <div class="carousel-item">
+              <div class="card w-100 h-80 mx-auto" style="max-width: 25rem; min-height: 30rem;" >
+                <img src="resources/candy rain.jpg" class="card-img-top" alt="Candy Rain Room" style="height: 18rem; object-fit: cover;" >
+                <div class="card-body">
+                  <h5 class="card-title">Candy Rain Room</h5>
+                  <p class="card-text">A magical place where colorful candy droplets fall from the sky!</p>
+                  <a href="#" class="btn btn-primary">Explore</a>
+                </div>
+              </div>
+          </div>
 
           <div class="carousel-item">
-            <div class="card w-100 h-100 mx-auto" style="max-width: 25rem; min-height: 30rem;">
+            <div class="card w-100 h-80 mx-auto" style="max-width: 25rem; min-height: 30rem;">
               <img src="resources/sweets-shop.webp" class="card-img-top" alt="Sweets Shop"  style="height: 18rem; object-fit: cover;" >
               <div class="card-body">
                 <h5 class="card-title">Sweets Shop</h5>
@@ -174,76 +175,76 @@
             </div>
           </div>
 
-        <div class="carousel-item">
-          <div class="card w-100 h-80 mx-auto" style="max-width: 25rem; min-height: 30rem;" >
-            <img src="resources/purple-cafe.jpg" class="card-img-top" alt="Candy Rain Room" style="height: 18rem; object-fit: cover;" >
-            <div class="card-body">
-              <h5 class="card-title">Local cafe</h5>
-              <p class="card-text">A magical place where you can have the themed Wonka meals!</p>
-              <a href="#" class="btn btn-primary">Explore</a>
+          <div class="carousel-item">
+            <div class="card w-100 h-80 mx-auto" style="max-width: 25rem; min-height: 30rem;" >
+              <img src="resources/purple-cafe.jpg" class="card-img-top" alt="Candy Rain Room" style="height: 18rem; object-fit: cover;" >
+              <div class="card-body">
+                <h5 class="card-title">Local cafe</h5>
+                <p class="card-text">A magical place where you can have the themed Wonka meals!</p>
+                <a href="#" class="btn btn-primary">Explore</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="card w-100 h-80 mx-auto" style="max-width: 25rem; min-height: 30rem;" >
+              <img src="resources/inventing-room.jpg" class="card-img-top" alt="Candy Rain Room" style="height: 18rem; object-fit: cover;" >
+              <div class="card-body">
+                <h5 class="card-title">Inventing room</h5>
+                <p class="card-text">The place where you can make your own magical things from scratch!</p>
+                <a href="#" class="btn btn-primary">Explore</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="card w-100 h-80 mx-auto" style="max-width: 25rem; min-height: 30rem;" >
+              <img src="resources/chocolate-river.webp" class="card-img-top" alt="Chocolate river" style="height: 18rem; object-fit: cover;" >
+              <div class="card-body">
+                <h5 class="card-title">Chocolate river</h5>
+                <p class="card-text">The place where sweet adour of chocoalate meets tranquility!</p>
+                <a href="#" class="btn btn-primary">Explore</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="card w-100 h-80 mx-auto" style="max-width: 25rem; min-height: 30rem;" >
+              <img src="resources/candy-forest.jpg" class="card-img-top" alt="Candy Rain Room" style="height: 18rem; object-fit: cover;" >
+              <div class="card-body">
+                <h5 class="card-title">Candy Forest</h5>
+                <p class="card-text">A magical place where you can have a calm stroll with endless sweet snacks!</p>
+                <a href="#" class="btn btn-primary">Explore</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="card w-100 h-80 mx-auto" style="max-width: 25rem; min-height: 30rem;" >
+              <img src="resources/nut-room.jpg" class="card-img-top" alt="Nut Room" style="height: 18rem; object-fit: cover;" >
+              <div class="card-body">
+                <h5 class="card-title">Nut room</h5>
+                <p class="card-text">A place where our squirrels expertly crack open walnuts.</p>
+                <a href="#" class="btn btn-primary">Explore</a>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="carousel-item">
-          <div class="card w-100 h-80 mx-auto" style="max-width: 25rem; min-height: 30rem;" >
-            <img src="resources/inventing-room.jpg" class="card-img-top" alt="Candy Rain Room" style="height: 18rem; object-fit: cover;" >
-            <div class="card-body">
-              <h5 class="card-title">Inventing room</h5>
-              <p class="card-text">The place where you can make your own magical things from scratch!</p>
-              <a href="#" class="btn btn-primary">Explore</a>
-            </div>
-          </div>
-        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
 
-        <div class="carousel-item">
-          <div class="card w-100 h-80 mx-auto" style="max-width: 25rem; min-height: 30rem;" >
-            <img src="resources/chocolate-river.webp" class="card-img-top" alt="Candy Rain Room" style="height: 18rem; object-fit: cover;" >
-            <div class="card-body">
-              <h5 class="card-title">Chocolate river</h5>
-              <p class="card-text">The place where sweet adour of chocoalate meets tranquility!</p>
-              <a href="#" class="btn btn-primary">Explore</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <div class="card w-100 h-80 mx-auto" style="max-width: 25rem; min-height: 30rem;" >
-            <img src="resources/candy-forest.jpg" class="card-img-top" alt="Candy Rain Room" style="height: 18rem; object-fit: cover;" >
-            <div class="card-body">
-              <h5 class="card-title">Candy Forest</h5>
-              <p class="card-text">A magical place where you can have a calm stroll with endless sweet snacks!</p>
-              <a href="#" class="btn btn-primary">Explore</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <div class="card w-100 h-80 mx-auto" style="max-width: 25rem; min-height: 30rem;" >
-            <img src="resources/nut-room.jpg" class="card-img-top" alt="Candy Rain Room" style="height: 18rem; object-fit: cover;" >
-            <div class="card-body">
-              <h5 class="card-title">Nut room</h5>
-              <p class="card-text">A place where you can meet our trained squirrels who expertly crack open walnuts and hazelnuts.</p>
-              <a href="#" class="btn btn-primary">Explore</a>
-            </div>
-          </div>
-        </div>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-
-      <!-- Carousel controls -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselControls" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-        </main>
-      </div>
-    </div>
-<footer class="footer bg-white navbar-light py-4 shadow-lg">
+    </main>
+  </div>
+</div>
+<footer class="footer bg-white py-4 shadow-lg">
   <div class="container">
     <div class="row footer-content">
 
@@ -269,10 +270,10 @@
         <h5 class="mb-3">Our Address</h5>
         <p>Emmy‑Noether‑Straße, Munich, Germany</p>
       </div>
-
     </div>
   </div>
 </footer>
+  <script src="script.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
