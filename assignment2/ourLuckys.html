@@ -16,7 +16,7 @@
   <i class="fa-solid fa-candy-cane text-pink"></i>
   Willy Wonka
 </a>
-
+<span id="datetime" class="text-white ms-3 fw-bold"></span>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
@@ -74,53 +74,65 @@
        
 
   
-    <main class="lucky_card">
-      <h1>OUR LUCKYS</h1>
-        <div class="cards">
+<main class="col-12 col-md-9 col-lg-10 px-lg-2 mt-lg-3 ourluckys">
+    <h1 class="text-center mb-4">OUR LUCKYS</h1>
 
-          <div class="box">
-            <img src="resources/Augustus%20Gloop.jpg" alt="Augustus Gloop">
-            <h2>Augustus Gloop</h2>
-            <p class="description">Loves chocolate, couldn’t resist the Chocolate River.</p>
-            <p class="win_date">23 June 2021</p>
-            <button class="card-button">Learn More</button>
-          </div>
+    <div class="card-group">
 
-          <div class="box">
-            <img src="resources/Veruca%20Salt.jpg" alt="Veruca Salt">
-            <h2>Veruca Salt</h2>
-            <p class="description">A spoiled girl who demanded everything immediately.</p>
-            <p class="win_date">04 July 2021</p>
-            <button class="card-button">Learn More</button>
-          </div>
+        <div class="card">
+            <img src="resources/Augustus Gloop.jpg" class="card-img-top img-fluid object-fit-cover  h-50" alt="Augustus Gloop">
+            <div class="card-body text-center">
+                <h5 class="card-title">Augustus Gloop</h5>
+                <p class="card-text win_date">23 June 2021</p>
+                <p class="card-text">Augustus is known for his love of sweets and was the first to win the golden ticket.</p>
+            </div>
+        </div>
 
-          <div class="box">
-            <img src="resources/Violet%20Beauregarde.jpg" alt="Violet Beauregarde">
-            <h2>Violet Beauregarde</h2>
-            <p class="description">Obsessed with gum, turned violet after testing gum.</p>
-            <p class="win_date">15 May 2022</p>
-            <button class="card-button">Learn More</button>
-          </div>
+        <div class="card">
+            <img src="resources/Veruca Salt.jpg" class="card-img-top img-fluid object-fit-cover h-50" alt="Veruca Salt">
+            <div class="card-body text-center">
+                <h5 class="card-title">Veruca Salt</h5>
+                <p class="card-text win_date">04 July 2021</p>
+                <p class="card-text">Veruca is a spoiled girl with a strong personality and determination to get what she wants.</p>
+            </div>
+        </div>
 
-          <div class="box">
-            <img src="resources/Mike%20Teavee.jpg" alt="Mike Teavee">
-            <h2>Mike Teavee</h2>
-            <p class="description">Loved TV more than anything, got shrunken by Wonka-Vision.</p>
-            <p class="win_date">24 November 2022</p>
-            <button class="card-button">Learn More</button>
-          </div>
+        <div class="card">
+            <img src="resources/Violet Beauregarde.jpg" class="card-img-top img-fluid  h-50" alt="Violet Beauregarde">
+            <div class="card-body text-center">
+                <h5 class="card-title">Violet Beauregarde</h5>
+                <p class="card-text win_date">15 May 2022</p>
+                <p class="card-text">Violet is known for her competitive nature and love for chewing gum at all times.</p>
+            </div>
+        </div>
 
-          <div class="box">
-            <img src="resources/charlie_bucket.webp" alt="Charlie Bucket">
-            <h2>Charlie Bucket</h2>
-            <p class="description">Kind-hearted boy who won Willy Wonka’s factory.</p>
-            <p class="win_date">1 January 2023</p>
-            <button class="card-button">Learn More</button>
-          </div>
-      </div>  
-    </main>
+        <div class="card">
+            <img src="resources/mike .webp" class="card-img-top img-fluid  h-50 " alt="Mike Teavee">
+            <div class="card-body text-center">
+                <h5 class="card-title">Mike Teavee</h5>
+                <p class="card-text win_date">24 November 2022</p>
+                <p class="card-text">Mike is fascinated by television and technology, always eager to explore new gadgets.</p>
+            </div>
+        </div>
 
-      <footer class="footer bg-white navbar-light py-4 shadow-lg">
+        <div class="card">
+            <img src="resources/charlie_bucket.webp" class="card-img-top img-fluid h-50" alt="Charlie Bucket">
+            <div class="card-body text-center">
+                <h5 class="card-title">Charlie Bucket</h5>
+                <p class="card-text win_date">1 January 2023</p>
+                <p class="card-text">Charlie is humble and kind-hearted, and the last golden ticket winner in the story.</p>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+
+
+    </div>
+  </div>
+
+<footer class="footer bg-white py-4 shadow-lg">
   <div class="container">
     <div class="row footer-content">
 
@@ -146,12 +158,12 @@
         <h5 class="mb-3">Our Address</h5>
         <p>Emmy‑Noether‑Straße, Munich, Germany</p>
       </div>
-
     </div>
   </div>
 </footer>
 
    </div>
+   <script src="script.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
  </body>
 </html>
