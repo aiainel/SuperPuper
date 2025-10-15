@@ -160,4 +160,74 @@ function closeModal(modal) {
     contactForm.reset();
     closeModal(document.getElementById('contactModal'));
 }); 
+// Date and Time Display
+  function updateDateTime() {
+    const now = new Date();
+    const options = { 
+      year: 'numeric', month: 'long', day: 'numeric', 
+      hour: 'numeric', minute: '2-digit', second: '2-digit' 
+    };
+    document.getElementById('datetime').textContent = now.toLocaleString('en-US', options);
+  }
+
+  updateDateTime();
+  setInterval(updateDateTime, 1000);
+
+
+// Modal Handling
+const openButton = document.getElementById('openModal');
+const closeButton = document.getElementById('closeModal');
+const modal = document.getElementById('myModal');
+const overlay = document.getElementById('overlay');
+
+if (!(openButton && closeButton && modal && overlay)) return;
+
+openButton.addEventListener('click', () => openModal(modal, overlay));
+closeButton.addEventListener('click', () => closeModal(modal, overlay));
+overlay.addEventListener('click', () => closeModal(modal, overlay));
+
+function openModal(modal, overlay) {
+  modal.classList.add('active');
+  overlay.classList.add('active');
+}
+
+function closeModal(modal, overlay) {
+  modal.classList.remove('active');
+  overlay.classList.remove('active');
+}
+
+
+// Contact Form Handling
+  const contactForm = document.getElementById('contactForm');
+  contactForm?.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const name = document.getElementById('contactName').value.trim();
+    const email = document.getElementById('contactEmail').value.trim();
+    const message = document.getElementById('contactMessage').value.trim();
+
+    const nameError = document.getElementById("contactNameError");
+    const emailError = document.getElementById("contactEmailError");
+    const messageError = document.getElementById("contactMessageError");
+
+    nameError.textContent = "";
+    messageError.textContent = "";
+
+    let isValid = validateEmail(email, emailError);
+
+    if (!name) {
+      nameError.textContent = "Name is required.";
+      isValid = false;
+    }
+
+    if (!message) {
+      messageError.textContent = "Message is required.";
+      isValid = false;
+    }
+
+    if (!isValid) return;
+
+    alert('Message sent! Thank you, ' + name);
+    contactForm.reset();
+    closeModal(modal, overlay);
+}); 
 });
