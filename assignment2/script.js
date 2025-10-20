@@ -1,6 +1,4 @@
-// =====================
-// Willy Wonka – main JS
-// =====================
+
 document.addEventListener("DOMContentLoaded", () => {
   // ---------- Helpers ----------
   function validateEmail(email, errorElement) {
@@ -159,35 +157,51 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ---------- Dark Mode Toggle ----------
-  (function setupDarkMode() {
-    const btn = document.getElementById("themeToggleBtn");
-    const icon = document.getElementById("themeToggleIcon");
-    if (!(btn && icon)) return;
+  // ---------- Dark Mode Toggle + Click Sound ----------
+(function setupDarkMode() {
+  const btn  = document.getElementById("themeToggleBtn");
+  const icon = document.getElementById("themeToggleIcon");
+  const sfx  = document.getElementById("themeClickSfx");
+  if (!(btn && icon)) return;
 
-    const THEME_KEY = "theme";
-    const ICON_ON  = "resources/dark_on.png";   // тёмная тема включена
-    const ICON_OFF = "resources/dark_off.png";  // тёмная тема выключена
+  const THEME_KEY = "theme";
+  const ICON_ON  = "resources/dark_on.png";   // тёмная тема включена
+  const ICON_OFF = "resources/dark_off.png";  // тёмная тема выключена
 
-    // читаем сохранённое значение или системное предпочтение
-    const saved = localStorage.getItem(THEME_KEY); // 'dark' | 'light' | null
-    const prefersDark = window.matchMedia?.("(prefers-color-scheme: dark)").matches;
-    const startMode = saved || (prefersDark ? "dark" : "light");
+  // helper: безопасное воспроизведение (и быстрые повторные клики)
+  function playClick() {
+    if (!sfx) return;
+    try {
+      // клонируем, чтобы звук не обрезался при частых кликах
+      const clone = sfx.cloneNode(true);
+      clone.volume = 0.8;          // при желании отрегулируй
+      clone.currentTime = 0;
+      clone.play().catch(() => {});
+    } catch (_) {}
+  }
 
-    function apply(mode) {
-      const isDark = mode === "dark";
-      document.body.classList.toggle("dark", isDark);
-      btn.setAttribute("aria-pressed", String(isDark));
-      icon.src = isDark ? ICON_ON : ICON_OFF;
-      icon.alt = isDark ? "Disable dark mode" : "Enable dark mode";
-      icon.title = icon.alt;
-    }
+  // читаем сохранённую тему или system preference
+  const saved = localStorage.getItem(THEME_KEY);
+  const prefersDark = window.matchMedia?.("(prefers-color-scheme: dark)").matches;
+  const startMode = saved || (prefersDark ? "dark" : "light");
 
-    apply(startMode);
+  function apply(mode) {
+    const isDark = mode === "dark";
+    document.body.classList.toggle("dark", isDark);
+    btn.setAttribute("aria-pressed", String(isDark));
+    icon.src = isDark ? ICON_ON : ICON_OFF;
+    icon.alt = isDark ? "Disable dark mode" : "Enable dark mode";
+    icon.title = icon.alt;
+  }
 
-    btn.addEventListener("click", () => {
-      const nextMode = document.body.classList.contains("dark") ? "light" : "dark";
-      apply(nextMode);
-      localStorage.setItem(THEME_KEY, nextMode);
+  apply(startMode);
+
+  btn.addEventListener("click", () => {
+    playClick(); // звук по клику
+    const nextMode = document.body.classList.contains("dark") ? "light" : "dark";
+    apply(nextMode);
+    localStorage.setItem(THEME_KEY, nextMode);
+  });
+})();
+
     });
-  })();
-});
