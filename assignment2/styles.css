@@ -448,3 +448,89 @@ p {
   font-size: 0.95rem;
   color: #f0f0f0;
 }
+
+/* ===== Dark mode ===== */
+:root { color-scheme: light dark; }
+
+/* Базовый фон/текст */
+body.dark {
+  background: #0f0f14;
+  color: #e8e8ee;
+}
+
+/* Navbar (перекрашиваем фиолетовый в более тёмный) */
+body.dark .navbar {
+  background-color: #5e3ca7 !important;
+}
+body.dark .navbar .nav-link {
+  color: rgba(255,255,255,0.9) !important;
+}
+
+/* Левый сайдбар */
+body.dark aside {
+  background-color: #2b2253 !important;
+}
+body.dark aside .nav-link { color: #f0eaff !important; }
+
+/* Футер, чтобы не был белым */
+body.dark .footer {
+  background: #111 !important;
+  color: #eaeaea !important;
+}
+body.dark .footer h5 { color: #ffffff !important; }
+
+/* Кнопки и инпуты в модалке */
+body.dark .custom-modal {
+  background: #1a1a23;
+  color: #f0f0f0;
+}
+body.dark .custom-modal .form-control {
+  background: #0f0f14;
+  color: #fff;
+  border-color: #3a3a44;
+}
+
+/* Оверлей модалки немного темнее */
+body.dark #overlay {
+  background: rgba(0,0,0,0.65);
+}
+
+/* Универсально подсветим ссылки в тёмной теме */
+body.dark a { color: #c9b6ff; }
+
+/* ==== Cards in Dark Mode (Our Luckys и любые карточки) ==== */
+body.dark .card,
+body.dark .card-body,
+body.dark .card-header,
+body.dark .list-group-item {
+  background-color: #1a1a23 !important;
+  color: #e8e8ee !important;
+  border-color: #2e2e3a !important;
+}
+
+/* Заголовки, подписи, muted-текст на карточках */
+body.dark .card-title,
+body.dark .card-header,
+body.dark .list-group-item .fw-bold {
+  color: #ffffff !important;
+}
+body.dark .text-muted,
+body.dark .card .text-muted {
+  color: #c9c9d4 !important;
+}
+
+/* Если где-то явно стоит класс bg-white/text-dark — перекрасим в дарк */
+body.dark .bg-white { background-color: #1a1a23 !important; }
+body.dark .text-dark { color: #e8e8ee !important; }
+
+/* Небольшая подстройка изображений на тёмном фоне (по желанию) */
+body.dark .card-img,
+body.dark .card-img-top {
+  filter: brightness(0.95) contrast(1.05);
+}
+
+/* Hover/фокус (если у тебя есть эффект наведения на карточку) */
+body.dark .card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+  border-color: #3b3b4a !important;
+}

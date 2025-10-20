@@ -10,13 +10,14 @@
   <title>Our Luckys</title>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#9370DB;">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#9370DB;">
   <div class="container-fluid">
-  <a class="navbar-brand fs-4 fst-italic" href="#">
-  <i class="fa-solid fa-candy-cane text-pink"></i>
-  Willy Wonka
-</a>
-<span id="datetime" class="text-white ms-3 fw-bold"></span>
+    <a class="navbar-brand fs-4 fst-italic" href="#">
+      <i class="fa-solid fa-candy-cane text-pink"></i>
+      Willy Wonka
+    </a>
+
+    <span id="datetime" class="text-white ms-3 fw-bold"></span>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
@@ -26,7 +27,21 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto d-flex gap-3">
+      <ul class="navbar-nav ms-auto d-flex gap-3 align-items-center">
+
+        <li class="nav-item d-flex align-items-center">
+          <button id="themeToggleBtn"
+                  class="btn p-0 border-0 bg-transparent"
+                  aria-label="Toggle dark mode"
+                  aria-pressed="false"
+                  title="Toggle dark mode">
+            <img id="themeToggleIcon"
+                 src="resources/dark_off.png"
+                 alt="Enable dark mode"
+                 width="28" height="28">
+          </button>
+        </li>
+
         <li class="nav-item">
           <a class="nav-link" href="index.html">Home</a>
         </li>
@@ -43,7 +58,7 @@
           <a class="nav-link" href="gambling.html">Gambling</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="ourluckys.html">ourLuckys</a>
+          <a class="nav-link" href="ourluckys.html">Our Luckys</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="tours.html">Tours</a>
