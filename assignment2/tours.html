@@ -10,7 +10,7 @@
     <title>Tours</title>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark sticky-md-top sticky-lg-top " style="background-color:#9370DB;">
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-md-top sticky-lg-top ">
     <div class="container-fluid">
       <a class="navbar-brand fs-4 fst-italic" href="#">
         <i class="fa-solid fa-candy-cane text-pink"></i>
@@ -57,7 +57,7 @@
 
   <div class="container-fluid">
     <div class="row"> 
-      <aside class="col-12 col-md-3 col-lg-2 p-3 d-flex flex-column" style="background-color:#C7B7E8; ">
+      <aside class="col-12 col-md-3 col-lg-2 p-3 d-flex flex-column">
         <h3 class="text-center text-white fw-bold">Menu</h3>
         <ul class="nav flex-column flex-grow-1">
           <li class="nav-item "><a class="nav-link text-white" href="#"><i class="fa-solid fa-house"></i> Dashboard</a></li>
@@ -73,7 +73,7 @@
       <main class="tours-container">
         <h1>OUR TOURS</h1>
         <div class="tours-container_packages">
-          <div class="classic_tour">
+          <div class="classic_tour" data-type="classic">
             <img src="resources/thumbs-up.png" alt="Chocolate river">
             <h2>Classic Tour</h2>
             <ul>
@@ -84,12 +84,12 @@
               <li>Duration:3-4 hours</li>
             </ul>
             <div class="tour-footer">
-              <button class="tour-button">Book Now</button>
+              <button class="tour-button" id="openModal">Book Now</button>
                 <span class="tour-price">💰 $299</span>         
             </div>
           </div>
 
-          <div class="deluxe_tour">
+          <div class="deluxe_tour" data-type="deluxe">
             <img src="resources/wealth.png" alt="Our cafe">
             <h2>Deluxe Tour</h2>
             <ul>
@@ -100,12 +100,12 @@
               <li>Duration:5-6 hours</li>
             </ul>
             <div class="tour-footer">
-              <button class="tour-button">Book Now</button>
+              <button class="tour-button" id="openModal">Book Now</button>
               <span class="tour-price">💰 $599</span>
             </div>
           </div>
 
-          <div class="vip_tour">
+          <div class="vip_tour" data-type="vip">
             <img src="resources/vip.png" alt="Oompa Loompas">
             <h2>VIP Tour</h2>
             <ul>
@@ -116,14 +116,42 @@
               <li>Duration:Full day experience</li>
             </ul>
             <div class="tour-footer">
-              <button class="tour-button">Book Now</button>
+              <button class="tour-button" id="openModal">Book Now</button>
               <span class="tour-price">💰 $799</span>
             </div>
           </div>
         </div>
+       <div class="custom-modal" id="myModal">
+          <div class="custom-modal-header">
+            <div class="custom-modal-title">Contact us</div>
+            <button type="button" class="close-button" id="closeModal">&times;</button>
+          </div>
+          <div class="custom-modal-body">
+            <form id="contactForm" novalidate>
+              <div class="mb-3">
+                <label for="contactName" class="form-label">Name</label>
+                <input type="text" id="contactName" class="form-control" required>
+              </div>
+              <div id="contactNameError" class="text-danger mb-2 fs-6"></div>
+              <div class="mb-3">
+                <label for="contactEmail" class="form-label">Email</label>
+                <input type="email" id="contactEmail" class="form-control" required>
+              </div>
+              <div id="contactEmailError" class="text-danger mb-2 fs-6"></div>
+              <div class="mb-3">
+                <label for="contactMessage" class="form-label">Message</label>
+                <textarea id="contactMessage" class="form-control" rows="4" required></textarea>
+              </div>
+              <div id="contactMessageError" class="text-danger mb-2 fs-6"></div>
+              <button type="submit" class="btn btn-primary w-100">Send Message</button>
+            </form>
+          </div>
+        </div>
+        <div id="overlay" class="overlay"></div>
+
 
          <div class="text-center mt-5 pt-5">
-          <h2 class="fw-bold" style=" color:#9370DB">Explore the Willy Wonka’s Factory</h2>
+          <h2 class="fw-bold">Explore the Willy Wonka’s Factory</h2>
           <p class="text-muted fs-5 w-75 mx-auto">
             Step into a world of imagination and sweetness! Each room in the factory is filled with surprises — from rivers of chocolate to forests made of candy. Scroll through to discover them all.
           </p>
@@ -132,8 +160,8 @@
       <div id="carouselControls" class="carousel carousel-fade slide mb-5 mx-auto" data-bs-ride="carousel" style="max-width:1000px;">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <div class="card w-100 h-80 mx-auto" style="max-width: 25rem; min-height: 30rem;">
-            <img src="resources/beverage-room.webp" class="card-img-top" alt="..." style="height: 18rem; object-fit: cover;" >
+            <div class="card w-100 mx-auto my-card">
+            <img src="resources/beverage-room.webp" class="card-img-top h-75" alt="Beverage room" >
               <div class="card-body">
                 <h5 class="card-title">Beverage room</h5>
                 <p class="card-text">The place where you can make the fizziest cocktails in the world!.</p>
@@ -143,8 +171,8 @@
           </div>
   
           <div class="carousel-item">
-              <div class="card w-100 h-80 mx-auto" style="max-width: 25rem; min-height: 30rem;" >
-                <img src="resources/candy rain.jpg" class="card-img-top" alt="Candy Rain Room" style="height: 18rem; object-fit: cover;" >
+              <div class="card w-100  mx-auto my-card" >
+                <img src="resources/candy rain.jpg" class="card-img-top h-75" alt="Candy Rain Room" >
                 <div class="card-body">
                   <h5 class="card-title">Candy Rain Room</h5>
                   <p class="card-text">A magical place where colorful candy droplets fall from the sky!</p>
@@ -154,8 +182,8 @@
           </div>
 
           <div class="carousel-item">
-            <div class="card w-100 h-80 mx-auto" style="max-width: 25rem; min-height: 30rem;">
-              <img src="resources/sweets-shop.webp" class="card-img-top" alt="Sweets Shop"  style="height: 18rem; object-fit: cover;" >
+            <div class="card w-100 mx-auto my-card">
+              <img src="resources/sweets-shop.webp" class="card-img-top h-75" alt="Sweets Shop" >
               <div class="card-body">
                 <h5 class="card-title">Sweets Shop</h5>
                 <p class="card-text">A delightful shop filled with treats and sugary dreams.</p>
@@ -165,8 +193,8 @@
           </div>
 
           <div class="carousel-item">
-            <div class="card w-100 h-80 mx-auto" style="max-width: 25rem; min-height: 30rem;" >
-              <img src="resources/merch-shop.jpg" class="card-img-top" alt="Candy Rain Room" style="height: 18rem; object-fit: cover;" >
+            <div class="card w-100  mx-auto my-card">
+              <img src="resources/merch-shop.jpg" class="card-img-top  h-75" alt="Candy Rain Room">
               <div class="card-body">
                 <h5 class="card-title">Souvenirs shop</h5>
                 <p class="card-text">A place where you can find gifts for your loved ones!</p>
@@ -176,8 +204,8 @@
           </div>
 
           <div class="carousel-item">
-            <div class="card w-100 h-80 mx-auto" style="max-width: 25rem; min-height: 30rem;" >
-              <img src="resources/purple-cafe.jpg" class="card-img-top" alt="Candy Rain Room" style="height: 18rem; object-fit: cover;" >
+            <div class="card w-100 mx-auto my-card" >
+              <img src="resources/purple-cafe.jpg" class="card-img-top  h-75" alt="Candy Rain Room" >
               <div class="card-body">
                 <h5 class="card-title">Local cafe</h5>
                 <p class="card-text">A magical place where you can have the themed Wonka meals!</p>
@@ -187,8 +215,8 @@
           </div>
 
           <div class="carousel-item">
-            <div class="card w-100 h-80 mx-auto" style="max-width: 25rem; min-height: 30rem;" >
-              <img src="resources/inventing-room.jpg" class="card-img-top" alt="Candy Rain Room" style="height: 18rem; object-fit: cover;" >
+            <div class="card w-100 mx-auto my-card" >
+              <img src="resources/inventing-room.jpg" class="card-img-top h-75" alt="Candy Rain Room"  >
               <div class="card-body">
                 <h5 class="card-title">Inventing room</h5>
                 <p class="card-text">The place where you can make your own magical things from scratch!</p>
@@ -198,8 +226,8 @@
           </div>
 
           <div class="carousel-item">
-            <div class="card w-100 h-80 mx-auto" style="max-width: 25rem; min-height: 30rem;" >
-              <img src="resources/chocolate-river.webp" class="card-img-top" alt="Chocolate river" style="height: 18rem; object-fit: cover;" >
+            <div class="card w-100 h-80 my-card mx-auto" >
+              <img src="resources/chocolate-river.webp" class="card-img-top  h-75" alt="Chocolate river">
               <div class="card-body">
                 <h5 class="card-title">Chocolate river</h5>
                 <p class="card-text">The place where sweet adour of chocoalate meets tranquility!</p>
@@ -209,8 +237,8 @@
           </div>
 
           <div class="carousel-item">
-            <div class="card w-100 h-80 mx-auto" style="max-width: 25rem; min-height: 30rem;" >
-              <img src="resources/candy-forest.jpg" class="card-img-top" alt="Candy Rain Room" style="height: 18rem; object-fit: cover;" >
+            <div class="card w-100 mx-auto my-card">
+              <img src="resources/candy-forest.jpg" class="card-img-top  h-75" alt="Candy Rain Room">
               <div class="card-body">
                 <h5 class="card-title">Candy Forest</h5>
                 <p class="card-text">A magical place where you can have a calm stroll with endless sweet snacks!</p>
@@ -220,8 +248,8 @@
           </div>
 
           <div class="carousel-item">
-            <div class="card w-100 h-80 mx-auto" style="max-width: 25rem; min-height: 30rem;" >
-              <img src="resources/nut-room.jpg" class="card-img-top" alt="Nut Room" style="height: 18rem; object-fit: cover;" >
+            <div class="card w-100 mx-auto my-card">
+              <img src="resources/nut-room.jpg" class="card-img-top h-75" alt="Nut Room" >
               <div class="card-body">
                 <h5 class="card-title">Nut room</h5>
                 <p class="card-text">A place where our squirrels expertly crack open walnuts.</p>
@@ -241,6 +269,11 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
+
+      <button id="backToTop">
+       <i class="fa-solid fa-arrow-up-from-bracket"></i>
+      </button>
+
     </main>
   </div>
 </div>
