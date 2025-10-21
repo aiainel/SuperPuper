@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#9370DB;">
+<nav class="navbar navbar-expand-lg navbar-dark">
   <div class="container-fluid">
     <a class="navbar-brand fs-4 fst-italic" href="#">
       <i class="fa-solid fa-candy-cane text-pink"></i> Willy Wonka
@@ -44,7 +44,7 @@
 
 <div class="container-fluid">
   <div class="row min-vh-100">
-    <aside class="col-12 col-md-3 col-lg-2 p-3 d-flex flex-column" style="background-color:#C7B7E8;">
+    <aside class="col-12 col-md-3 col-lg-2 p-3 d-flex flex-column">
       <h3 class="text-center text-white fw-bold mb-3">Menu</h3>
       <ul class="nav flex-column flex-grow-1">
         <li class="nav-item"><a class="nav-link text-white" href="#"><i class="fa-solid fa-house"></i> Dashboard</a></li>
@@ -152,6 +152,7 @@
   </div>
 </div>
 
+
     </main>
     <footer class="footer bg-white py-4 shadow-lg mt-auto">
   <div class="container">
@@ -178,6 +179,14 @@
         <h5 class="mb-3">Our Address</h5>
         <p>Emmy‑Noether‑Straße, Munich, Germany</p>
       </div>
+      
+<div class="text-center my-5">
+  <button id="showTimeBtn" class="btn btn-primary btn-lg">
+    Показать текущее время
+  </button>
+  <p id="timeDisplay" class="fw-bold mt-3 text-primary"></p>
+</div>
+
     </div>
   </div>
 </footer>
@@ -187,5 +196,6 @@
 
 <script src="script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
