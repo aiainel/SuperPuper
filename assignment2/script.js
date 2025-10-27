@@ -556,7 +556,83 @@ const timeDisplay = document.getElementById("timeDisplay");
     }
   });
 }
- });
+ 
+  (function(){
+    var $bar = $('#scrollProgress .bar');
+    if (!$bar.length) return;
+    var vertical = $('#scrollProgress').hasClass('vertical');
+    var ticking = false;
+    function update() {
+      ticking = false;
+      var doc = document.documentElement;
+      var st = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
+      var sh = doc.scrollHeight - doc.clientHeight;
+      var p = sh > 0 ? (st / sh) * 100 : 0;
+      if (vertical) {
+        $bar.css('height', p + '%').attr('aria-valuenow', Math.round(p));
+      } else {
+        $bar.css('width', p + '%').attr('aria-valuenow', Math.round(p));
+      }
+    }
+    function onScroll(){
+      if(!ticking){
+        requestAnimationFrame(update);
+        ticking = true;
+      }
+    }
+    $(window).on('scroll resize', onScroll);
+    update();
+  })();
 
+  (function(){
+    var $counters = $('.countup');
+    if (!$counters.length) return;
 
+    function animateNumber($el){
+      if ($el.data('counted')) return;
+      $el.data('counted', true);
+      var target = parseFloat($el.data('count')) || 0;
+      var duration = parseInt($el.data('duration'),10) || 1500;
+      var suffix = $el.data('suffix') || '';
+      var start = 0;
+      var t0 = null;
+      function tick(ts){
+        if (!t0) t0 = ts;
+        var p = Math.min((ts - t0) / duration, 1);
+        var eased = 1 - Math.pow(1 - p, 3);
+        var val = Math.floor(start + (target - start) * eased);
+        $el.text(val.toLocaleString() + suffix);
+        if (p < 1) requestAnimationFrame(tick);
+        else $el.text(Math.round(target).toLocaleString() + suffix);
+      }
+      requestAnimationFrame(tick);
+    }
 
+    if ('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if (entry.isIntersecting){
+            animateNumber($(entry.target));
+            io.unobserve(entry.target);
+          }
+        });
+      }, {threshold: 0.35});
+      $counters.each(function(){ io.observe(this); });
+    } else {
+      function check(){
+        var wt = $(window).scrollTop();
+        var wb = wt + $(window).height();
+        $counters.each(function(){
+          var $el = $(this);
+          if ($el.data('counted')) return;
+          var top = $el.offset().top;
+          var bottom = top + $el.outerHeight();
+          if (bottom >= wt && top <= wb) animateNumber($el);
+        });
+      }
+      $(window).on('scroll resize load', check);
+      check();
+    }
+  })();
+
+});
