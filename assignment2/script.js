@@ -118,6 +118,96 @@ function loadImage(elem){
       loadImage(this);
     });
   });
+
+// ============================
+  // Item Filtering
+  // ============================
+    function filterItems() {
+    let searchText = $("#searchInput").val().toLowerCase();
+    let priceOption = $("#priceFilter").val();
+
+    $(".card").each(function() {
+      let title = $(this).find(".card-title").text().toLowerCase();
+      let priceText = $(this).find(".card-text").text().replace(/[^\d]/g, "");
+      let price = parseInt(priceText, 10);
+
+      let matchesSearch = title.includes(searchText);
+      let matchesPrice = false;
+
+      if (priceOption === "all") matchesPrice = true;
+      else if (priceOption === "0-1000") matchesPrice = price <= 1000;
+      else if (priceOption === "1000-3000") matchesPrice = price > 1000 && price <= 3000;
+      else if (priceOption === "3000+") matchesPrice = price > 3000;
+
+      if (matchesSearch && matchesPrice) $(this).parent().show();
+      else $(this).parent().hide();
+    });
+  }
+
+  $("#searchInput").on("keyup", filterItems);
+  $("#priceFilter").on("change", filterItems);
+
+  const productNames = [
+    "Rahat 80% Cocoa Cube 275g",
+    "Rahat 65% Cocoa Cube 275g",
+    "Rahat 70% Cocoa Cube 275g",
+    "Rahat Bar 100g",
+    "Rahat 80% Bar 100g",
+    "Rahat Chocolate Box",
+    "Rahat Caramel"
+  ];
+
+  $("#searchInput").on("keyup", function () {
+    let value = $(this).val().toLowerCase();
+    let suggestions = $("#suggestions");
+    suggestions.empty(); 
+
+    if (value) {
+      let matches = productNames.filter(name => name.toLowerCase().includes(value));
+      matches.forEach(name => {
+        suggestions.append(`<li class="list-group-item suggestion-item">${name}</li>`);
+      });
+    }
+
+    $(document).on("click", ".suggestion-item", function () {
+      $("#searchInput").val($(this).text());
+      suggestions.empty();
+       filterItems(); 
+    });
+  });
+
+  // ============================
+  // Search implementation
+  // ============================
+        $(".faq-question").on("click", function() {
+          $(this).toggleClass("active");
+          const $answer = $(this).next();
+
+          if ($answer.css("display") === "block") {
+            $answer.css("display", "none");
+          } else {
+            $answer.css("display", "block");
+          }
+      });
+      $("#highlightInput").on("keyup", function () {
+        let searchText = $(this).val().toLowerCase();
+
+        $(".faq-question, .faq-answer").each(function () {
+          let html = $(this).html();
+          html = html.replace(/<span class="highlight">(.*?)<\/span>/g, "$1");
+          $(this).html(html);
+        });
+
+        if (searchText) {
+          $(".faq-question, .faq-answer").each(function () {
+            let html = $(this).html();
+            let regex = new RegExp(`(${searchText})`, "gi");
+            html = html.replace(regex, '<span class="highlight">$1</span>');
+            $(this).html(html);
+          });
+        }
+      });
+
 // ============================
   // Registration Form (Multi-step)
   // ============================
@@ -483,80 +573,77 @@ closeModal();
   });
 })();
 
-// ========= Переключатель языков =========
-const langButtons = document.querySelectorAll("[data-lang]");
+// ============================
+  // Language switcher and Copy button
+  // ============================
+  const translations = {
+    introText: {
+      en: "Willy Wonka’s imagination didn’t just stop at chocolate — it grew into a world of wonder.",
+      ru: "Воображение Вилли Вонки не ограничивалось шоколадом — оно выросло в мир чудес.",
+      kz: "Вилли Вонканың қиялы тек шоколадта тоқтап қалған жоқ — ол ғажайып әлемге ұласты."
+    },
+    extraText: {
+      en: "His factory was more than a business — it was a dream come true, a place where ideas took shape in sugar and color. Every candy had a story, and every visitor left with a sparkle of inspiration.",
+      ru: "Его фабрика была больше, чем бизнес — это была мечта, воплощённая в жизнь, место, где идеи оживали в сахаре и цвете. Каждая конфета имела свою историю, и каждый посетитель уходил с искрой вдохновения.",
+      kz: "Оның фабрикасы тек кәсіп қана емес — ол орындалған арман болды, идеялар қант пен түсте қалыптасатын орын. Әр тәттінің өз оқиғасы бар, әр келуші шабыттың жарқылымен кетеді."
+    }
+  };
+const $intro = $("#introText");
+const $extra = $("#extraText");
+const defaultLang="en";
 
-langButtons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    const lang = btn.getAttribute("data-lang");
-
-    const intro = document.getElementById("introText");
-    const extra = document.getElementById("extraText");
-
-    if (!intro || !extra) return;
-
-    intro.childNodes[0].textContent = translations.introText[lang] + " ";
-    extra.textContent = translations.extraText[lang];
-  });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  setupReadMore();
-
- 
-  const defaultLang = "en";
-  document.getElementById("introText").textContent = translations.introText[defaultLang];
-  document.getElementById("extraText").textContent = translations.extraText[defaultLang];
-});
-
-
-
-const translations = {
-  introText: {
-    en: "Willy Wonka’s imagination didn’t just stop at chocolate — it grew into a world of wonder.",
-    ru: "Воображение Вилли Вонки не ограничивалось шоколадом — оно выросло в мир чудес.",
-    kz: "Вилли Вонканың қиялы тек шоколадта тоқтап қалған жоқ — ол ғажайып әлемге ұласты."
-  },
-  extraText: {
-    en: "His factory was more than a business — it was a dream come true, a place where ideas took shape in sugar and color. Every candy had a story, and every visitor left with a sparkle of inspiration.",
-    ru: "Его фабрика была больше, чем бизнес — это была мечта, воплощённая в жизнь, место, где идеи оживали в сахаре и цвете. Каждая конфета имела свою историю, и каждый посетитель уходил с искрой вдохновения.",
-    kz: "Оның фабрикасы тек кәсіп қана емес — ол орындалған арман болды, идеялар қант пен түсте қалыптасатын орын. Әр тәттінің өз оқиғасы бар, әр келуші шабыттың жарқылымен кетеді."
+if ($intro.length && $extra.length) {
+  const introTextNode = $intro.contents().filter(function () {
+    return this.nodeType === 3;
+  })[0];
+  if (introTextNode) {
+    introTextNode.textContent = translations.introText[defaultLang] + " ";
   }
-};
+  $extra.text(translations.extraText[defaultLang]).css("display", "none");
+  $("#readMoreBtn").text("Read More");
 
-
-const showTimeBtn = document.getElementById("showTimeBtn");
-const timeDisplay = document.getElementById("timeDisplay");
-
- 
-  showTimeBtn?.addEventListener("click", () => {
-    const currentTime = new Date().toLocaleTimeString();
-    timeDisplay.textContent = "Текущее время: " + currentTime;
-  });
-
- 
-  document.addEventListener("keydown", (event) => {
-    if (event.key && event.key.toLowerCase() === "t") {
-      const currentTime = new Date().toLocaleTimeString();
-      timeDisplay.textContent = "Вы нажали T! Время: " + currentTime;
+  $("[data-lang]").on("click", function () {
+    const lang = $(this).data("lang");
+    const introTextNode = $intro.contents().filter(function () {
+      return this.nodeType === 3;
+    })[0];
+    if (introTextNode) {
+      introTextNode.textContent = translations.introText[lang] + " ";
     }
+    $extra.text(translations.extraText[lang]).css("display", "none");
+    $("#readMoreBtn").text("Read More");
   });
 
-  function setupReadMore() {
-  const readMoreBtn = document.getElementById('readMoreBtn');
-  const extraText = document.getElementById('extraText');
-
-  readMoreBtn.addEventListener('click', function() {
-    if (extraText.style.display === 'none') {
-      extraText.style.display = 'inline';
-      readMoreBtn.textContent = 'Read Less';
+  $("#readMoreBtn").on("click", function () {
+    if ($extra.css("display") === "none") {
+      $extra.css("display", "inline");
+      $(this).text("Read Less");
     } else {
-      extraText.style.display = 'none';
-      readMoreBtn.textContent = 'Read More';
+      $extra.css("display", "none");
+      $(this).text("Read More");
     }
+  });
+
+  $("#copyBtn").on("click", function () {
+    let textToCopy = introTextNode.textContent.trim();
+    if ($extra.is(":visible")) {
+      textToCopy += " " + $extra.text().trim();
+    }
+
+    navigator.clipboard.writeText(textToCopy).then(() => {
+      $("#tooltip").css("display", "inline");
+      $(this).text("✔ Copied!");
+      setTimeout(() => {
+        $("#tooltip").css("display", "none");
+        $(this).text("Copy");
+      }, 1500);
+    });
   });
 }
- 
+
+  // ============================
+  //   Scroll Progress Bar
+  // ============================
   (function(){
     var $bar = $('#scrollProgress .bar');
     if (!$bar.length) return;
