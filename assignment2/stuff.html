@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Stuff — The Story of the Oompa-Loompas</title>
-
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://kit.fontawesome.com/1a847795f5.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="styles.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
@@ -13,34 +13,37 @@
         crossorigin="anonymous">
 </head>
 <body>
-
-<nav class="navbar navbar-expand-lg navbar-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand fs-4 fst-italic" href="#">
-      <i class="fa-solid fa-candy-cane text-pink"></i> Willy Wonka
-    </a>
-    <span id="datetime" class="text-white ms-3 fw-bold"></span>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
-            data-bs-target="#navbarSupportedContent" 
-            aria-controls="navbarSupportedContent" aria-expanded="false" 
-            aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto d-flex gap-3">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
-        <li class="nav-item"><a class="nav-link active" href="stuff.html">Stuff</a></li>
-        <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
-        <li class="nav-item"><a class="nav-link" href="gambling.html">Gambling</a></li>
-        <li class="nav-item"><a class="nav-link" href="ourluckys.html">ourLuckys</a></li>
-        <li class="nav-item"><a class="nav-link" href="tours.html">Tours</a></li>
-        <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
-      </ul>
-    </div>
+   <div id="scrollProgress">
+    <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
   </div>
-</nav>
+
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand fs-4 fst-italic" href="#">
+        <i class="fa-solid fa-candy-cane text-pink"></i> Willy Wonka
+      </a>
+      <span id="datetime" class="text-white ms-3 fw-bold"></span>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#navbarSupportedContent" 
+              aria-controls="navbarSupportedContent" aria-expanded="false" 
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto d-flex gap-3">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
+          <li class="nav-item"><a class="nav-link active" href="stuff.html">Stuff</a></li>
+          <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+          <li class="nav-item"><a class="nav-link" href="gambling.html">Gambling</a></li>
+          <li class="nav-item"><a class="nav-link" href="ourluckys.html">ourLuckys</a></li>
+          <li class="nav-item"><a class="nav-link" href="tours.html">Tours</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
 <div class="container-fluid">
   <div class="row min-vh-100">
@@ -194,8 +197,8 @@
   </div>
 </div>
 
-<script src="script.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
