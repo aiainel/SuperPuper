@@ -1,5 +1,100 @@
 
+/*******************************
+   LIGHT/DARK SWITCHERS
+*******************************/
+body.dark, body.dark footer content, body.dark .tours-container, body.dark .custom-modal{
+  background-color: black ;
+  color: white ;
+}
 
+body.dark footer.footer h5,
+body.dark footer.footer p,
+body.dark footer.footer li {
+  color: white !important;
+}
+
+body.dark footer.footer input {
+  background-color: #222 !important;
+  color: white !important;
+  border-color: #444 !important;
+}
+body.dark footer.footer button {
+  background-color: #5e3ca7;
+  color:white;
+}
+body.dark .rounded-custom{
+  background-color: #222;
+  color:white;
+}
+
+body.dark .faq-container, body.dark .faq-container h1, body.dark .faq-container input, body.dark .faq h1{
+  background-color: #222;
+  color: white;
+}
+body.dark .faq-question, body.dark .faq-question input{
+   background-color: #333;
+  color: white;
+}
+body.dark .faq-answer{
+   background-color: #333;
+  color: white; 
+}
+body.dark .highlight {
+  background-color: #CCCCCC;
+  font-weight: bold;
+}
+body.dark nav.navbar {
+  background-color:#5e3ca7  ;  
+  color: white;
+}
+body.dark .navbar .nav-link {
+  color: #ffccff;
+}
+
+body.dark .card, body.dark .tours-container_packages > div {
+  background-color: #222; 
+  color: white;
+  border: 1px solid #333;
+}
+
+body.dark .card .btn, body.dark .tour-button {
+  background-color: #5e3ca7 ;
+  color: white;
+  border: none;
+}
+body.dark .tours-container_packages h2{
+  color: #FFD6FF; 
+}
+
+body.dark .tour-footer {
+  border-top: 1px solid #333;
+}
+
+body.dark .tour-footer .tour-price {
+  color: #ffcc66; 
+}
+
+body.dark .tour-button:hover {
+  background-color: #b266ff; 
+}
+
+body.dark #loginForm, body.dark  #registerForm{
+    background-color: #5e3ca7 ;
+}
+
+body.dark .luckys-card {
+    background-color: #5e3ca7 ; 
+    color: #ffffff; 
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05); 
+}
+
+body.dark .luckys-card-date {
+    color: #cccccc;
+}
+
+body.dark .luckys-card-text {
+    color: #e0e0e0; 
+}
 
 
 /*******************************
@@ -25,17 +120,13 @@ nav {
   background-color: #D8BFD8; ;
   color: white;
 }
-
 /*******************************
-   SIDEBAR STYLES
+   NAVBAR STYLES
 *******************************/
-aside {
-    background-color: #C7B7E8; 
+footer.footer button {
+  background-color:#9370DB ;
+  color:white;
 }
-
-/*******************************
-   FOOTER STYLES
-*******************************/
 
 
 
@@ -44,6 +135,12 @@ aside {
   ======================== */
 #loginForm, #registerForm{
     background-color: #C7B7E8;
+    max-width: 450px;
+}
+.login-register-image{
+  max-width: 100%; 
+  min-width: 450px; 
+  height: auto;
 }
 #submitBtn {
       padding: 10px 20px;
@@ -124,10 +221,6 @@ aside {
 }
 
 /* =======================
-   HOME PAGE 
-  ======================== */
-
-/* =======================
    TOURS PAGE 
   ======================== */
 .lazy-image {
@@ -161,7 +254,7 @@ aside {
     flex-direction: row;
     justify-content: center;
     align-items: stretch;
-    gap: 35px;
+    gap: 60px;
     flex-wrap: wrap; 
 }
 
@@ -197,7 +290,6 @@ aside {
     width: calc(100% - 30px);
     box-sizing: border-box;
 }
-
 .tour-button {
     padding: 10px 20px;
     background-color: #9370DB;
@@ -210,8 +302,6 @@ aside {
     transition: background-color 0.3s ease, transform 0.2s ease;
     white-space: nowrap;
 }
-
-
 .tour-price {
     font-weight: bold;
     font-size: 1.5rem;
@@ -226,19 +316,14 @@ aside {
     object-fit: cover;
     margin-bottom: 10px;
 }
-h2{
-    color:#9370DB;
-}
+
 .my-card {
   max-width: 25rem;
   height: 30rem;
 }
 
-#backToTop {
-position: fixed; 
-bottom: 20px; 
-right: 20px;
-background: transparent;
+h2, .card-title{
+    color:#9370DB;
 }
 
 
@@ -385,15 +470,20 @@ background: transparent;
    ABOUT PAGE 
   ======================== */
 .rounded-custom {
-    border-radius: 100px ;
+    border-radius: 20px;
+    background-color: rgb(241, 241, 241);
+}
+.about-img{
+  max-height: 400px;
+  width: auto;
 }
 
 body {
     font-size: 20px;
 }
-
-h3 {
+#wonka-title {
     font-size: 2.2rem;
+    color:#9370DB;
 }
 
 p {
@@ -492,8 +582,33 @@ p {
         font-size: 0.9rem;
     }
 }
+#readMoreBtn,
+button[data-lang] {
+  background-color: transparent;
+  color: #9370DB;             
+  border: 2px solid #9370DB;  
+  border-radius: 0.5rem;        
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
 
+#readMoreBtn:hover,
+button[data-lang]:hover {
+  background-color: #9370DB; 
+  color: white;              
+}
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}
+#copyBtn {
+  border-radius: 8px;
+  font-weight: 500;
+}
 
+#tooltip {
+  font-size: 0.9rem;
+}
 
 /* =======================
    STUFF PAGE 
@@ -539,104 +654,66 @@ p {
   padding: 0;
 }
 
-
-
-
 /* =======================
    OURLUCKYS PAGE 
   ======================== */
 
-
-  #datetime {
-  font-size: 0.95rem;
-  color: #f0f0f0;
+.luckys-card {
+    height: auto;
+    max-width: 300px;
+    background-color: #9370DB; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
-/* ===== Dark mode ===== */
-:root { color-scheme: light dark; }
-
-
-body.dark {
-  background: #0f0f14;
-  color: #e8e8ee;
+.luckys-card-img {
+    height: 200px;
+    object-fit: contain;
+    width: 100%;
 }
 
-
-body.dark .navbar {
-  background-color: #5e3ca7 !important;
-}
-body.dark .navbar .nav-link {
-  color: rgba(255,255,255,0.9) !important;
+.luckys-card-body {
+    padding: 0.75rem;
+    text-align: center;
+    flex-grow: 1;
 }
 
-
-body.dark aside {
-  background-color: #2b2253 !important;
-}
-body.dark aside .nav-link { color: #f0eaff !important; }
-
-
-body.dark .footer {
-  background: #111 !important;
-  color: #eaeaea !important;
-}
-body.dark .footer h5 { color: #ffffff !important; }
-
-
-body.dark .custom-modal {
-  background: #1a1a23;
-  color: #f0f0f0;
-}
-body.dark .custom-modal .form-control {
-  background: #0f0f14;
-  color: #fff;
-  border-color: #3a3a44;
+.luckys-card-title {
+    margin-bottom: 0.25rem;
+    font-size: 1.1rem;
+    font-weight: bold;
 }
 
-
-body.dark #overlay {
-  background: rgba(0,0,0,0.65);
+.luckys-card-date {
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+    color: white;
 }
 
-
-body.dark a { color: #c9b6ff; }
-
-
-body.dark .card,
-body.dark .card-body,
-body.dark .card-header,
-body.dark .list-group-item {
-  background-color: #1a1a23 !important;
-  color: #e8e8ee !important;
-  border-color: #2e2e3a !important;
+.luckys-card-text {
+    font-size: 0.85rem;
+    color:white;
+}
+.luckys-card:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-
-body.dark .card-title,
-body.dark .card-header,
-body.dark .list-group-item .fw-bold {
-  color: #ffffff !important;
+@media (max-width: 576px) {
+    .luckys-card-img {
+        height: 180px;
+    }
 }
-body.dark .text-muted,
-body.dark .card .text-muted {
-  color: #c9c9d4 !important;
+/* =======================
+   SHOP PAGE 
+  ======================== */
+.shop-list{
+  z-index: 10;
+
 }
-
-
-body.dark .bg-white { background-color: #1a1a23 !important; }
-body.dark .text-dark { color: #e8e8ee !important; }
-
-
-body.dark .card-img,
-body.dark .card-img-top {
-  filter: brightness(0.95) contrast(1.05);
-}
-
-body.dark .card:hover {
-  box-shadow: 0 8px 24px rgba(0,0,0,0.45);
-  border-color: #3b3b4a !important;
-}
-
 /*=======================
    SCROLL PROGRESS BAR
 ======================= */
@@ -687,3 +764,9 @@ body.dark .stats-band {
   background: linear-gradient(90deg, rgba(155,93,229,.16), rgba(241,91,181,.16));
   border-color: rgba(255,255,255,.25);
 }
+
+.card-img-top {
+  height: 200px;
+  object-fit: contain;
+}
+
