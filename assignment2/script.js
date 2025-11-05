@@ -40,7 +40,24 @@ $(document).ready(function() {
         password.classList.remove("is-invalid");
         return true;
     }
+// ============================
+  // Footer subscription
+  // ============================
+const newsletter = $("#newsletter"); 
+const newsletterError = $("#newsletterError"); 
 
+newsletter.on("submit", function(e) {
+    e.preventDefault();
+
+  
+    const newsletter_email = $("#newsletter-email")[0]; 
+
+   
+    if (!validateEmail(newsletter_email, newsletterError[0])) return; 
+
+    alert("Subscribed successfully: " + newsletter_email.value);
+    newsletter[0].reset();
+});
 
   // ============================
   // Login Form
@@ -388,7 +405,7 @@ tours?.forEach(tour => {
 // ============================
   // Date and Time Display
   // ============================
-  function updateDateTime() {
+/*   function updateDateTime() {
     const now = new Date();
     const options = { 
       year: 'numeric', month: 'long', day: 'numeric', 
@@ -399,7 +416,7 @@ tours?.forEach(tour => {
 
   updateDateTime();
   setInterval(updateDateTime, 1000);
-
+ */
 // ============================
   // Tour Booking System
   // ============================
@@ -527,22 +544,13 @@ closeModal();
 
 });
 
-// ========= Тёмная тема =========
-(function setupDarkMode() {
-  const btn  = document.getElementById("themeToggleBtn");
-  const icon = document.getElementById("themeToggleIcon");
-  const sfx  = document.getElementById("themeClickSfx");
-  if (!(btn && icon)) return;
-
-  const THEME_KEY = "theme";
-  const ICON_ON  = "resources/dark_on.png";   
-  const ICON_OFF = "resources/dark_off.png";  
-
-  
+// ============================
+  // Sound effect
+  // ============================
+   const sfx  = document.getElementById("themeClickSfx");
   function playClick() {
     if (!sfx) return;
     try {
-      
       const clone = sfx.cloneNode(true);
       clone.volume = 0.8;        
       clone.currentTime = 0;
@@ -550,32 +558,40 @@ closeModal();
     } catch (_) {}
   }
 
-  const saved = localStorage.getItem(THEME_KEY);
-  const prefersDark = window.matchMedia?.("(prefers-color-scheme: dark)").matches;
-  const startMode = saved || (prefersDark ? "dark" : "light");
+document.querySelector('.themetoggle')?.addEventListener('click', (e)=>{
+  e.preventDefault();
+  playClick();
 
-  function apply(mode) {
-    const isDark = mode === "dark";
-    document.body.classList.toggle("dark", isDark);
-    btn.setAttribute("aria-pressed", String(isDark));
-    icon.src = isDark ? ICON_ON : ICON_OFF;
-    icon.alt = isDark ? "Disable dark mode" : "Enable dark mode";
-    icon.title = icon.alt;
+  if(localStorage.getItem('theme') === 'dark'){
+    localStorage.removeItem('theme');
+  }else{
+    localStorage.setItem('theme', 'dark');
   }
+  addDarkMode();
+});
 
-  apply(startMode);
+function addDarkMode(){
+  try{
+    if(localStorage.getItem('theme') === 'dark'){
+      document.querySelector('body').classList.add('dark');
+      document.querySelector('.themetoggle span').textContent='dark_mode';
+    }else{
+    document.querySelector('body').classList.remove('dark');
+    document.querySelector('.themetoggle span').textContent='light_mode';
+    }
+  }catch(err){}
+};
 
-  btn.addEventListener("click", () => {
-    playClick(); 
-    const nextMode = document.body.classList.contains("dark") ? "light" : "dark";
-    apply(nextMode);
-    localStorage.setItem(THEME_KEY, nextMode);
-  });
-})();
+addDarkMode();
 
 // ============================
   // Language switcher and Copy button
   // ============================
+
+  $("#MyButton").click(function(){
+     $("#MyButton").css("color", "red")
+  })
+
   const translations = {
     introText: {
       en: "Willy Wonka’s imagination didn’t just stop at chocolate — it grew into a world of wonder.",
@@ -644,7 +660,7 @@ if ($intro.length && $extra.length) {
   // ============================
   //   Scroll Progress Bar
   // ============================
-  (function(){
+ (function(){
     var $bar = $('#scrollProgress .bar');
     if (!$bar.length) return;
     var vertical = $('#scrollProgress').hasClass('vertical');
