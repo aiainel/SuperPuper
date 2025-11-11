@@ -1,42 +1,69 @@
-#  Willy Wonka Website  
+# 🍫 Willy Wonka Website  
 
-##  Project Description  
-**Willy Wonka Website** is a creative and interactive web project inspired by *Willy Wonka & the Chocolate Factory*.  
-The site combines design, storytelling, and coding elements to let users explore the magical world of Wonka’s factory.  
-
-The project was created to develop web development skills, teamwork, and experience with API integration.  
-
----
-
-## 🎥 Demo  
-🔗  [Live Demo on Netlify] https://resonant-meerkat-401149.netlify.app/ 
+## 📝 Project Description
+Willy Wonka Website is a creative and interactive web project inspired by *Willy Wonka & the Chocolate Factory*.  
+It combines design, storytelling, and coding elements to let users explore the magical world of Wonka’s factory.  
+The project aims to develop web development skills, teamwork, and experience with API integration.
 
 ---
 
-## 👥 Team Members and Roles  
-- **Ali** — Developed the **Shop** and **Staff** pages, focusing on product layout and staff profiles.  
-- **Mansur** — Created the **Gambling** and **OurLucky** pages with interactive, game-like features.  
-- **Anel** — Designed the **Home** and **About Us** pages, ensuring smooth navigation and consistent visuals.  
-- **Moldir** — Built the **Stories** and **Tours** pages, adding storytelling elements and API integration.  
+## 🎥 Demo
+🔗 [Live Demo on Netlify](https://resonant-meerkat-401149.netlify.app/)  
 
 ---
 
-##  Project Features  
--  **Interactive Shop** — Users can browse Wonka-themed candies and products.  
--  **OurLucky Game Section** — Fun and engaging area inspired by Wonka’s surprises.  
--  **Stories & Tours** — Themed storytelling and virtual factory experiences.  
--  **About & Staff Pages** — Introduces the fictional company and its creative team.  
--  **API Integration** — Displays movie data related to Wonka using an external API.  
+## 👥 Team Members and Roles
+- **Ali** — Shop and Staff pages: product layout and staff profiles
+- **Mansur** — Gambling and OurLucky pages: interactive game features
+- **Anel** — Home and About Us pages: navigation and consistent visuals
+- **Moldir** — Stories and Tours pages: storytelling elements and API integration
 
 ---
 
-##  Technologies Used  
-- **HTML5**  
-- **CSS3**  
-- **JavaScript / jQuery**  
-- **Bootstrap 5** for responsive design  
-- **OMDb API** for movie data integration  
-- **GitHub / Netlify** for hosting and deployment  
+## 🌟 Project Features
+- Interactive Shop: browse Wonka-themed candies and products
+- OurLucky Game Section: fun, engaging mini-games
+- Stories & Tours: themed storytelling and virtual factory experiences
+- About & Staff Pages: introduce fictional company and team
+- API Integration: display movie data and currency information dynamically
 
 ---
+
+## 🧩 Technologies Used
+- HTML5
+- CSS3
+- JavaScript / jQuery
+- Bootstrap 5 (responsive design)
+- OMDb API (movie data)
+- Free Currency Exchange Rates API
+- GitHub / Netlify (hosting and deployment)
+
+---
+
+## 🔗 API Integration Details
+
+### 🎬 OMDb API
+- **Purpose:** Fetch and display movie data related to Willy Wonka films
+- **Data Provided:** Title, Year, Director, Actors, Plot, Poster
+- **Usage:** Display dynamic movie information on Stories or Tours pages
+- **Source:** [https://www.omdbapi.com/](https://www.omdbapi.com/)
+
+---
+
+### 💵 Free Currency Exchange Rates API
+- **Purpose:** Provide real-time exchange rates for over 200 currencies including cryptocurrencies and metals
+- **Features:**
+  - Daily updated rates
+  - No authentication required
+  - Free with no rate limits
+  - Blazing fast CDN response
+  - Supports JSON and minified JSON formats
+  - Fallback URL for reliability
+- **Endpoints:**
+  - `/currencies` — list all available currencies
+  - `/currencies/{currencyCode}` — exchange rates for a base currency
+  - `/currencies/{currencyCode}.min.json` — minified version
+- **Fallback URLs:** Cloudflare-hosted endpoints if primary CDN fails
+- **Usage:** Display currency conversions for products or ticket prices
+
 
