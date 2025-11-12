@@ -137,31 +137,8 @@ function loadImage(elem){
   });
 
 // ============================
-  // Item Filtering
+  // Item Filtering & API Currency Conversion
   // ============================
-    function filterItems() {
-    let searchText = $("#searchInput").val().toLowerCase();
-    let priceOption = $("#priceFilter").val();
-
-    $(".card").each(function() {
-      let title = $(this).find(".card-title").text().toLowerCase();
-      let priceText = $(this).find(".card-text").text().replace(/[^\d]/g, "");
-      let price = parseInt(priceText, 10);
-
-      let matchesSearch = title.includes(searchText);
-      let matchesPrice = false;
-
-      if (priceOption === "all") matchesPrice = true;
-      else if (priceOption === "0-1000") matchesPrice = price <= 1000;
-      else if (priceOption === "1000-3000") matchesPrice = price > 1000 && price <= 3000;
-      else if (priceOption === "3000+") matchesPrice = price > 3000;
-
-      if (matchesSearch && matchesPrice) $(this).parent().show();
-      else $(this).parent().hide();
-    });
-  }
-
-  $("#searchInput").on("keyup", filterItems);
   $("#priceFilter").on("change", filterItems);
 
   const productNames = [
@@ -174,24 +151,94 @@ function loadImage(elem){
     "Rahat Caramel"
   ];
 
-  $("#searchInput").on("keyup", function () {
-    let value = $(this).val().toLowerCase();
-    let suggestions = $("#suggestions");
-    suggestions.empty(); 
+  const suggestions = $("#suggestions");
 
-    if (value) {
-      let matches = productNames.filter(name => name.toLowerCase().includes(value));
+  $("#searchInput").on("keyup", function () {
+    const value = $(this).val().toLowerCase();
+    suggestions.empty();
+
+    if(value) {
+      const matches = productNames.filter(name => name.toLowerCase().includes(value));
       matches.forEach(name => {
         suggestions.append(`<li class="list-group-item suggestion-item">${name}</li>`);
       });
     }
 
-    $(document).on("click", ".suggestion-item", function () {
-      $("#searchInput").val($(this).text());
-      suggestions.empty();
-       filterItems(); 
-    });
+    filterItems();
   });
+
+  $(document).on("click", ".suggestion-item", function() {
+    $("#searchInput").val($(this).text());
+    suggestions.empty();
+    filterItems();
+  });
+
+
+let currentCurrency = "KZT";
+let exchangeRate = 0;
+
+const fetchRate = async () => {
+  const primaryUrl = "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.json";
+  const fallbackUrl = "https://latest.currency-api.pages.dev/v1/currencies/usd.json";
+
+  try {
+    let response = await fetch(primaryUrl);
+    if (!response.ok) throw new Error("Primary failed");
+    let data = await response.json();
+    exchangeRate = data.usd.kzt;
+  } catch {
+    let response = await fetch(fallbackUrl);
+    let data = await response.json();
+    exchangeRate = data.usd.kzt;
+  }
+};
+
+
+document.querySelectorAll('.card-text').forEach(el => {
+  el.dataset.kzt = parseFloat(el.textContent.replace(/\s|₸|\/ pcs/g,'')); 
+});
+
+const togglePrices = () => {
+  if(exchangeRate === 0) return; 
+
+  document.querySelectorAll('.card-text').forEach(el => {
+    const kzt = parseFloat(el.dataset.kzt);
+    if(currentCurrency === "KZT") {
+      const usd = (kzt / exchangeRate).toFixed(2);
+      el.textContent = `$${usd} / pcs`;
+    } else {
+      el.textContent = `${kzt.toLocaleString()} ₸ / pcs`;
+    }
+  });
+
+  currentCurrency = currentCurrency === "KZT" ? "USD" : "KZT";
+};
+
+
+fetchRate();
+document.getElementById("toggleCurrency")?.addEventListener("click", togglePrices);
+
+function filterItems() {
+  const searchText = $("#searchInput").val().toLowerCase();
+  const priceOption = $("#priceFilter").val();
+
+  $(".card").each(function() {
+    const title = $(this).find(".card-title").text().toLowerCase();
+    const kztPrice = parseFloat($(this).find(".card-text")[0].dataset.kzt);
+
+    let min = 0, max = Infinity;
+    if(priceOption === "0-1000") { min = 0; max = 1000; }
+    else if(priceOption === "1000-3000") { min = 1000; max = 3000; }
+    else if(priceOption === "3000+") { min = 3000; max = Infinity; }
+
+    const matchesSearch = title.includes(searchText);
+    const matchesPrice = priceOption === "all" || (kztPrice >= min && kztPrice <= max);
+
+    if(matchesSearch && matchesPrice) $(this).parent().show();
+    else $(this).parent().hide();
+  });
+}
+
 
   // ============================
   // Search implementation
@@ -383,40 +430,7 @@ tours?.forEach(tour => {
 });
 
 
-// ============================
-  // Background Color Changer
-  // ============================
-    const button = document.getElementById("colorButton");
-  const colors = [
-    "#FDE2E4",
-    "#FFC8DD",
-    "#CDB4DB",
-    "#BDE0FE",
-    "#A2D2FF",
-    "#C7B7E8",
-    "#FFFFFF"
-  ];
 
-  button?.addEventListener("click", function () {
-    const randomColor = colors[Math.floor(Math.random() * colors.length)];
-    document.body.style.backgroundColor = randomColor;
-  });
-
-// ============================
-  // Date and Time Display
-  // ============================
-/*   function updateDateTime() {
-    const now = new Date();
-    const options = { 
-      year: 'numeric', month: 'long', day: 'numeric', 
-      hour: 'numeric', minute: '2-digit', second: '2-digit' 
-    };
-    document.getElementById('datetime').textContent = now.toLocaleString('en-US', options);
-  }
-
-  updateDateTime();
-  setInterval(updateDateTime, 1000);
- */
 // ============================
   // Tour Booking System
   // ============================
@@ -738,4 +752,46 @@ if ($intro.length && $extra.length) {
     }
   })();
 
+// ============================
+  // API Movie Info Fetcher
+  // ============================
+const apiKey = "260f47f"; 
+const select = document.getElementById("movieSelect");
+const movieInfo = document.getElementById("movieInfo");
+
+async function fetchMovie(title) {
+  const response = await fetch(`https://www.omdbapi.com/?t=${encodeURIComponent(title)}&apikey=${apiKey}`);
+  const data = await response.json();
+
+  if (data.Response === "True") {
+    movieInfo.innerHTML = `
+<div class="movie-card shadow-sm mb-3">
+  <div class="row g-0 d-flex flex-column flex-md-row">
+    <div class="col-md-4 d-flex">
+      <img src="${data.Poster !== 'N/A' ? data.Poster : 'resources/no-poster.jpg'}"
+           class="movie-card-img rounded-start"
+           alt="${data.Title}">
+    </div>
+    <div class="col-md-8 d-flex">
+      <div class="flex-grow-1 p-3 d-flex flex-column justify-content-md-center">
+        <h5 class="books-card-title">${data.Title} (${data.Year})</h5>
+        <p class="books-card-text"><strong>Genre:</strong> ${data.Genre}</p>
+        <p class="books-card-text"><strong>Director:</strong> ${data.Director}</p>
+        <p class="books-card-text"><strong>Actors:</strong> ${data.Actors}</p>
+        <p class="books-card-text"><strong>Plot:</strong> ${data.Plot}</p>
+        <p class="books-card-text"><strong>IMDB Rating:</strong> ⭐ ${data.imdbRating}</p>
+      </div>
+    </div>
+  </div>
+</div>
+    `;
+  } else {
+    movieInfo.innerHTML = `<p>❌ Movie not found!</p>`;
+  }
+}
+
+
+fetchMovie(select?.value);
+
+select?.addEventListener("change", () => fetchMovie(select.value));
 });
