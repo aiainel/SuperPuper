@@ -55,6 +55,9 @@
           <a class="nav-link" href="tours.html">Tours</a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="stories.html">Stories</a>
+          </li>
+        <li class="nav-item">
           <a class="nav-link" href="login.html">Login</a>
         </li>
         <li class='nav-item'><a  class="nav-link themetoggle" href="#">
@@ -69,6 +72,7 @@
     <div class="row min-vh-100"> 
   <main class="p-4">
         <h1 class="text-center text-md-start">Sweets</h1>
+        <button id="toggleCurrency" class="btn btn-secondary mb-4 toggleCurrency">Toggle Currency (KZT/USD)</button>
       <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mb-4">
        <div class="position-relative w-50">
           <input type="text" id="searchInput" class="form-control mb-2 mb-md-0" placeholder="Search sweets...">
@@ -83,11 +87,11 @@
             <option value="3000+">3000+ ₸</option>
           </select>
         </div>
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+<div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-4 g-4">
 
            <div class="col">
             <div class="card h-100 shadow-sm">
-              <img src="./resources/rahat_chococubedef.png" class="card-img-top" alt="Rahat Cube 275g">
+              <img src="./resources/rahat_chococubedef.png" class="card-img-top h-75" alt="Rahat Cube 275g">
               <div class="card-body text-center">
                 <h5 class="card-title mb-2">Rahat 80% Cocoa Cube 275g</h5>
                 <p class="card-text text-muted mb-0">3 600 ₸ / pcs</p>
@@ -97,7 +101,7 @@
 
           <div class="col">
             <div class="card h-100 shadow-sm">
-              <img src="./resources/65rahat_choco_cube.png" class="card-img-top" alt="Rahat 65% Cocoa Cube 275g">
+              <img src="./resources/65rahat_choco_cube.png" class="card-img-top h-75" alt="Rahat 65% Cocoa Cube 275g">
               <div class="card-body text-center">
                 <h5 class="card-title mb-2">Rahat 65% Cocoa Cube 275g</h5>
                 <p class="card-text text-muted mb-0">2 687 ₸ / pcs</p>
@@ -107,7 +111,7 @@
 
           <div class="col">
             <div class="card h-100 shadow-sm">
-              <img src="./resources/70rahat_chococube.png" class="card-img-top" alt="Rahat 70% Cocoa Cube 275g">
+              <img src="./resources/70rahat_chococube.png" class="card-img-top h-75" alt="Rahat 70% Cocoa Cube 275g">
               <div class="card-body text-center">
                 <h5 class="card-title mb-2">Rahat 70% Cocoa Cube 275g</h5>
                 <p class="card-text text-muted mb-0">4 232 ₸ / pcs</p>
@@ -117,7 +121,7 @@
          
         <div class="col">
           <div class="card h-100 shadow-sm">
-            <img src="./resources/gorki_rahat.png" class="card-img-top" alt="Rahat 80% Cocoa Cube 275g">
+            <img src="./resources/gorki_rahat.png" class="card-img-top h-75" alt="Rahat 80% Cocoa Cube 275g">
             <div class="card-body text-center">
               <h5 class="card-title mb-2">Rahat 80% Cocoa Cube 275g</h5>
               <p class="card-text text-muted mb-0">2 687 ₸ / pcs</p>
@@ -128,7 +132,7 @@
        
         <div class="col">
           <div class="card h-100 shadow-sm">
-            <img src="./resources/kazakhstan_chocolate.png" class="card-img-top" alt="Rahat Bar 100g">
+            <img src="./resources/kazakhstan_chocolate.png" class="card-img-top h-75" alt="Rahat Bar 100g">
             <div class="card-body text-center">
               <h5 class="card-title mb-2">Rahat Bar 100g</h5>
               <p class="card-text text-muted mb-0">1 000 ₸ / pcs</p>
@@ -139,7 +143,7 @@
         
         <div class="col">
           <div class="card h-100 shadow-sm">
-            <img src="./resources/65rahat_choco_plitka.png" class="card-img-top" alt="Rahat 65% Bar 100g">
+            <img src="./resources/65rahat_choco_plitka.png" class="card-img-top h-75" alt="Rahat 65% Bar 100g">
             <div class="card-body text-center">
               <h5 class="card-title mb-2">Rahat 65% Bar 100g</h5>
               <p class="card-text text-muted mb-0">1 298 ₸ / pcs</p>
@@ -149,7 +153,7 @@
 
           <div class="col">
             <div class="card h-100 shadow-sm">
-              <img src="./resources/almaty_choco.png" class="card-img-top" alt="Rahat 70% Bar 100g">
+              <img src="./resources/almaty_choco.png" class="card-img-top h-75" alt="Rahat 70% Bar 100g">
               <div class="card-body text-center">
                 <h5 class="card-title mb-2">Rahat 70% Bar 100g</h5>
                 <p class="card-text text-muted m-0">1 298 ₸ / pcs</p>
@@ -159,7 +163,7 @@
 
           <div class="col">
             <div class="card h-100 shadow-sm">
-              <img src="./resources/80plitka_rahat.png" class="card-img-top" alt="Rahat 80% Bar 100g">
+              <img src="./resources/80plitka_rahat.png" class="card-img-top h-75" alt="Rahat 80% Bar 100g">
               <div class="card-body text-center">
                 <h5 class="card-title mb-2">Rahat 80% Bar 100g</h5>
                 <p class="card-text text-muted m-0">1 716 ₸ / pcs</p>
@@ -169,7 +173,7 @@
 
           <div class="col">
             <div class="card h-100 shadow-sm">
-              <img src="./resources/almaty_rahat.png" class="card-img-top" alt="Rahat 80% Bar 100g">
+              <img src="./resources/almaty_rahat.png" class="card-img-top h-75" alt="Rahat 80% Bar 100g">
               <div class="card-body text-center">
                 <h5 class="card-title mb-2">Rahat 80% Bar 100g</h5>
                 <p class="card-text text-muted mb-0">1 716 ₸ / pcs</p>
@@ -178,7 +182,7 @@
           </div>
           <div class="col">
             <div class="card h-100 shadow-sm">
-              <img src="./resources/I_love_rakhat.png" class="card-img-top" alt="Rahat 80% Bar 100g">
+              <img src="./resources/I_love_rakhat.png" class="card-img-top h-75" alt="Rahat 80% Bar 100g">
               <div class="card-body text-center">
                 <h5 class="card-title">Rahat 80% Bar 100g</h5>
                 <p class="card-text text-muted mb-0">1 890 ₸ / pcs</p>
@@ -188,8 +192,8 @@
 
           <div class="col">
             <div class="card h-100 shadow-sm">
-              <img src="./resources/chocolate_box.png" class="card-img-top" alt="Rahat Chocolate Box">
-              <div class="card-body">
+              <img src="./resources/chocolate_box.png" class="card-img-top h-75" alt="Rahat Chocolate Box">
+              <div class="card-body text-center">
                 <h5 class="card-title">Rahat Chocolate Box</h5>
                 <p class="card-text tex-muted mb-0">1 716 ₸ / pcs</p>
               </div>
@@ -198,8 +202,8 @@
 
           <div class="col">
             <div class="card h-100 shadow-sm">
-              <img src="./resources/rahat_caramel.png" class="card-img-top" alt="Rahat Caramel">
-              <div class="card-body">
+              <img src="./resources/rahat_caramel.png" class="card-img-top h-75" alt="Rahat Caramel">
+              <div class="card-body text-center">
                 <h5 class="card-title">Rahat Caramel</h5>
                 <p class="card-text tex-muted mb-0">1 716 ₸ / pcs</p>
               </div>
@@ -236,10 +240,6 @@
       <div class="col-12 col-md-4" id="address">
         <h5 class="mb-3">Our Address</h5>
         <p>Emmy-Noether-Straße, Munich, Germany</p>
-
-        <div class="text-center mt-3">
-          <button id="colorButton" class="btn btn-outline-primary">Change Background</button>
-        </div>
       </div>
 
     </div>
